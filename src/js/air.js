@@ -1,5 +1,5 @@
 (function($) {
-	const UNIT = 320, DUR = 1000, MW = 1280, MH = 800;
+	const UNIT = 320, DUR = 10000, MW = 1280, MH = 800;
 	let W, H, VW, liPos, winPos = {x: 0, y: 0}, mv = 0, zoom = false, total, vx = 0, vy = 0;
 	
 	$(function(){
