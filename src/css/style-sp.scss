@@ -1,0 +1,164 @@
+@charset "utf-8";
+
+$white: #F7F7F7;
+$black: #222226;
+$blue: #0082C8;
+$mw: 1280px;
+$mh: 800px;
+
+@media screen and (min-width: 1px) {
+	#wrap {
+		min-width: auto;
+		height: auto;
+		min-height: auto;
+		
+		#logo {
+			position: fixed;
+			top: 20px;
+			left: 20px;
+			width: 220px;
+			height: 50px;
+		}
+		.page {
+			min-width: auto;
+		}
+		.main {
+			position: relative;
+			width: auto;
+			margin: 0 20px;
+			overflow: auto;
+		}
+		.mic {
+			position: absolute;
+			text-align: center;
+			
+			.icon {
+				position: absolute;
+				bottom: 66px;
+				left: 50%;
+				transform: translateY(0) translateX(-50%);
+			}
+			p {
+				margin-top: 20px;
+				font-size: 18px;
+				font-weight: 700;
+			}
+		}
+	}
+	
+	#video {
+		position: static;
+		min-width: auto;
+		min-height: auto;
+		display: none;
+		
+		ul {
+			width: 100%;
+			overflow: auto;
+		}
+	}
+	
+	#top {
+		.main {
+			padding: 100px 0 40px;
+			
+			.part {
+				padding-top: 25px;
+			}
+		}
+		.watch {
+			position: fixed;
+			bottom: 20px;
+			left: 20px;
+		}
+		.howto {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+		}
+	}
+	
+	#watch {
+		h2 {
+			top: 80px;
+			left: 20px;
+		}
+		.howto {
+			position: fixed;
+			bottom: 20px;
+			right: 20px;
+		}
+	}
+	
+	#play {
+		position: fixed !important;
+		
+		h2 {
+			top: 80px;
+			left: 20px;
+		}
+		.timer {
+			top: 88px;
+			right: 20px;
+		}
+		.mic {
+			bottom: 40px;
+			left: 0;
+			width: 100%;
+			
+			p {
+				text-align: center;
+			}
+		}
+	}
+	
+	#finish {
+		min-height: auto;
+		
+		.circle {
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			width: 356px;
+			height:356px;
+			padding: 100px 0 0 26px;
+			border-radius: 178px;
+		}
+		.top {
+			bottom: 20px;
+			left: 20px;
+		}
+	}
+	
+	#instruction {
+		height: calc(100% - 80px);
+		padding-top: 80px;
+		
+		h2 {
+			position: fixed;
+			top: 80px;
+			left: 20px;
+		}
+		.main {
+			position: static;
+			
+			.mic {
+				position: relative;
+				bottom: auto;
+				left: auto;
+				margin: 25px 0;
+				transform: none;
+				text-align: center;
+				
+				p {
+					text-align: center;
+				}
+			}
+			.arrow-left {
+				position: static;
+				display: block;
+				margin: 40px 0 20px;
+			}
+		}
+	}
+}

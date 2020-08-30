@@ -17,8 +17,14 @@ img {
   vertical-align: bottom;
 }
 
-.logo {
-  position: absolute;
+#wrap {
+  width: 100%;
+  min-width: 1280px;
+  height: 100%;
+  min-height: 800px;
+}
+#wrap #logo {
+  position: fixed;
   top: 40px;
   left: 40px;
   width: 200px;
@@ -29,12 +35,38 @@ img {
   overflow: hidden;
   z-index: 2;
 }
-
-#wrap {
+#wrap .page {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   min-width: 1280px;
-  height: 100%;
-  min-height: 800px;
+  z-index: 2;
+}
+#wrap .main {
+  width: calc(100% - 672px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+#wrap .btn {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border: 4px solid #F7F7F7;
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #F7F7F7;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 0.1px;
+  transition: all 200ms 0s;
+  justify-content: center;
+  align-items: center;
+}
+#wrap .btn:hover {
+  background: #F7F7F7;
+  color: #222226;
 }
 #wrap .mic {
   position: absolute;
@@ -50,80 +82,6 @@ img {
   margin-top: 20px;
   font-size: 18px;
   font-weight: 700;
-}
-
-.float {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 1280px;
-  height: 100%;
-  min-height: 800px;
-  z-index: 2;
-  pointer-events: none;
-}
-.float a {
-  pointer-events: auto;
-}
-.float .about {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  padding-top: 70px;
-  background: url(../img/about.svg) no-repeat;
-  color: #F7F7F7;
-}
-.float .watch {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-}
-.float .play {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-}
-.float .arrow-left {
-  display: none;
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-  width: 100px;
-  height: 100px;
-  background: url(../img/arrow-left.svg) no-repeat;
-}
-.float .btn {
-  width: 100px;
-  height: 100px;
-  border: 4px solid #F7F7F7;
-  border-radius: 50px;
-  font-size: 24px;
-  font-weight: 700;
-  color: #F7F7F7;
-  text-align: center;
-  line-height: 92px;
-  letter-spacing: 0.1px;
-  transition: all 300ms 0s;
-}
-.float .btn:hover {
-  background: #F7F7F7;
-  color: #222226;
-}
-
-.page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 1280px;
-  z-index: 2;
-}
-
-.main {
-  width: calc(100% - 672px);
-  margin: 0 auto;
-  overflow: hidden;
 }
 
 #video {
@@ -171,6 +129,11 @@ img {
   font-size: 40px;
   text-align: center;
 }
+#video ul li .dummy {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 #video ul .zoom {
   position: absolute;
   top: 0;
@@ -180,62 +143,89 @@ img {
   z-index: 1;
 }
 
-#watch {
-  display: none;
+#top #bg-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background-size: cover;
+}
+#top .main {
+  position: relative;
+  color: #0082C8;
   pointer-events: none;
+  padding: 20px 0;
 }
-#watch h2 {
-  position: absolute;
-  top: 96px;
-  left: 38px;
-  font-weight: 700;
-  font-size: 20px;
-  color: #F7F7F7;
-}
-
-#instruction {
-  display: none;
-  height: 100%;
-  padding-top: 40px;
-  pointer-events: none;
-  background: #222226;
-}
-#instruction h2 {
-  position: absolute;
-  top: 96px;
-  left: 38px;
-  font-weight: 700;
-  font-size: 20px;
-  color: #F7F7F7;
-}
-#instruction h3 {
+#top .main .part {
   padding-top: 20px;
-  font-size: 24px;
-  border-top: 1px solid #F7F7F7;
+  border-top: 1px solid #0082C8;
 }
-#instruction ol {
+#top .main h3 {
+  font-size: 24px;
+}
+#top .main p {
   margin: 20px 0;
   font-size: 18px;
 }
-#instruction ol li {
-  margin: 8px 0;
+#top .main .status {
+  display: flex;
+  flex-wrap: wrap;
 }
-#instruction .small {
-  font-size: 14px;
+#top .main .status li {
+  width: 33.3%;
 }
-#instruction .mic {
+#top .watch {
+  position: absolute;
   bottom: 40px;
-  left: 50%;
-  transform: translateY(0) translateX(-50%);
+  left: 40px;
+}
+#top .howto {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+#top .btn {
+  border: 4px solid #0082C8;
+  color: #0082C8;
+}
+#top .btn:hover {
+  background: #0082C8;
+  color: #F7F7F7;
+}
+
+#watch {
+  display: none;
+  height: 100%;
+  min-height: 800px;
+  pointer-events: none;
+}
+#watch h2 {
+  position: fixed;
+  top: 96px;
+  left: 38px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #F7F7F7;
+}
+#watch .howto {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  pointer-events: auto;
 }
 
 #play {
   display: none;
   height: 100%;
+  min-height: 800px;
   pointer-events: none;
 }
 #play h2 {
-  position: absolute;
+  position: fixed;
   top: 96px;
   left: 38px;
   font-weight: 700;
@@ -267,8 +257,9 @@ img {
 #finish {
   display: none;
   height: 100%;
-  pointer-events: none;
+  min-height: 800px;
   background: transparent linear-gradient(180deg, #A5DDFF 0%, #A7E2FD 50%, #D6F5FF 100%) 0% 0% no-repeat padding-box;
+  pointer-events: none;
 }
 #finish .circle {
   position: absolute;
@@ -283,142 +274,205 @@ img {
   font-size: 24px;
   color: #0082C8;
 }
-#finish .float {
-  pointer-events: none;
-}
-#finish .float a {
+#finish .top {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
   pointer-events: auto;
-}
-#finish .float .btn {
   border: 4px solid #0082C8;
   color: #0082C8;
 }
-#finish .float .btn:hover {
+#finish .top:hover {
   background: #0082C8;
   color: #F7F7F7;
 }
 
-#modal {
-  position: absolute;
+#instruction {
   display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 1280px;
+  position: fixed;
   height: 100%;
-  min-height: 800px;
+  padding-top: 40px;
+  background: #222226;
 }
-#modal .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 800px;
-  background: transparent linear-gradient(180deg, #A5DDFF 0%, #A7E2FD 50%, #D6F5FF 100%) 0% 0% no-repeat padding-box;
-}
-#modal .float {
-  pointer-events: none;
-}
-#modal .float a {
-  pointer-events: auto;
-}
-#modal .float .close {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  width: 56px;
-  height: 56px;
-  background: url(../img/close.svg) no-repeat;
-}
-#modal .float .btn {
-  border: 4px solid #0082C8;
-  color: #0082C8;
-}
-#modal .float .btn:hover {
-  background: #0082C8;
+#instruction h2 {
+  position: fixed;
+  top: 96px;
+  left: 38px;
+  font-weight: 700;
+  font-size: 20px;
   color: #F7F7F7;
 }
-#modal .modal {
-  position: relative;
-  height: 100%;
-  min-height: 800px;
-  color: #0082C8;
-  pointer-events: none;
+#instruction .main {
+  background: #222226;
 }
-#modal .modal h3 {
+#instruction .main h3 {
   padding-top: 20px;
-  border-top: 1px solid #0082C8;
   font-size: 24px;
+  border-top: 1px solid #F7F7F7;
 }
-#modal .modal p {
+#instruction .main ol {
   margin: 20px 0;
   font-size: 18px;
 }
-
-.modal-on {
-  position: fixed;
+#instruction .main ol li {
+  margin: 8px 0;
+}
+#instruction .main .small {
+  font-size: 14px;
+}
+#instruction .main .mic {
+  bottom: 40px;
+  left: 50%;
+  transform: translateY(0) translateX(-50%);
+}
+#instruction .main .arrow-left {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 100px;
+  height: 100px;
+  background: url(../img/arrow-left.svg) no-repeat;
 }
 
-/*
 @media screen and (max-width: 480px) {
-	#videos {
-		li {
-			.left {
-				a {
-					font-size: 18px;
-				}
-			}
-			.right {
-				.meter {
-					.second {
-						font-size: 12px;
-					}
-				}
-			}
-		}
-	}
+  #wrap {
+    min-width: auto;
+    height: auto;
+    min-height: auto;
+  }
+  #wrap #logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 220px;
+    height: 50px;
+  }
+  #wrap .page {
+    min-width: auto;
+  }
+  #wrap .main {
+    position: relative;
+    width: auto;
+    margin: 0 20px;
+    overflow: auto;
+  }
+  #wrap .mic {
+    position: absolute;
+    text-align: center;
+  }
+  #wrap .mic .icon {
+    position: absolute;
+    bottom: 66px;
+    left: 50%;
+    transform: translateY(0) translateX(-50%);
+  }
+  #wrap .mic p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
 
-	#modal {
-		.modal {
-			margin: 5% 12%;
-			pointer-events: none;
+  #video {
+    position: static;
+    min-width: auto;
+    min-height: auto;
+    display: none;
+  }
+  #video ul {
+    width: 100%;
+    overflow: auto;
+  }
 
-			h2 {
-				position: static;
-			}
-			.image {
-				position: static;
-				margin: 20px 0;
-				width: 100%;
-			}
-			.caption {
-				position: static;
-				margin: 20px 0;
-				width: 100%;
-			}
-			.mic {
-				position: relative;
-				top: auto;
-				left: auto;
-				margin: 40px 0;
-				padding-bottom: 10px;
-				width: 100%;
-				border-radius: 20px;
+  #top .main {
+    padding: 100px 0 40px;
+  }
+  #top .main .part {
+    padding-top: 25px;
+  }
+  #top .watch {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  }
+  #top .howto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
 
-				.txt {
-					margin: 10px;
-					font-size: 12px;
-				}
-				img {
-					position: static;
-					display: block;
-					margin: 20px auto;
-					transform: translateY(0) translateX(0);
-				}
-			}
-		}
-	}
+  #watch h2 {
+    top: 80px;
+    left: 20px;
+  }
+  #watch .howto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  #play {
+    position: fixed !important;
+  }
+  #play h2 {
+    top: 80px;
+    left: 20px;
+  }
+  #play .timer {
+    top: 88px;
+    right: 20px;
+  }
+  #play .mic {
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+  }
+  #play .mic p {
+    text-align: center;
+  }
+
+  #finish {
+    min-height: auto;
+  }
+  #finish .circle {
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 356px;
+    height: 356px;
+    padding: 100px 0 0 26px;
+    border-radius: 178px;
+  }
+  #finish .top {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  #instruction {
+    height: calc(100% - 80px);
+    padding-top: 80px;
+  }
+  #instruction h2 {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+  }
+  #instruction .main {
+    position: static;
+  }
+  #instruction .main .mic {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 25px 0;
+    transform: none;
+    text-align: center;
+  }
+  #instruction .main .mic p {
+    text-align: center;
+  }
+  #instruction .main .arrow-left {
+    position: static;
+    display: block;
+    margin: 40px 0 20px;
+  }
 }
-*/
