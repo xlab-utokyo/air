@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+html, body {
+  height: 100%;
+}
+
 body {
   background: #222226;
   color: #F7F7F7;
@@ -20,8 +24,6 @@ img {
 #wrap {
   width: 100%;
   min-width: 1280px;
-  height: 100%;
-  min-height: 800px;
 }
 #wrap #logo {
   position: fixed;
@@ -33,7 +35,6 @@ img {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-  z-index: 2;
 }
 #wrap .page {
   position: absolute;
@@ -41,12 +42,15 @@ img {
   left: 0;
   width: 100%;
   min-width: 1280px;
-  z-index: 2;
+  min-height: 800px;
 }
 #wrap .main {
   width: calc(100% - 672px);
   margin: 0 auto;
   overflow: hidden;
+}
+#wrap .bg {
+  position: fixed;
 }
 #wrap .btn {
   display: flex;
@@ -84,80 +88,9 @@ img {
   font-weight: 700;
 }
 
-#video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 1280px;
-  height: 100%;
-  min-height: 800px;
-}
-#video ul {
-  width: calc(100% - 672px);
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-height: 800px;
-}
-#video ul li {
-  position: relative;
-  overflow: hidden;
-}
-#video ul li iframe {
-  position: absolute;
-}
-#video ul li .caption {
-  position: absolute;
-  top: 72px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  pointer-events: none;
-}
-#video ul li .caption .status {
-  margin-top: 22px;
-  font-weight: 700;
-  font-size: 20px;
-  text-align: center;
-  text-decoration: underline;
-}
-#video ul li .caption h2 {
-  font-size: 40px;
-  text-align: center;
-}
-#video ul li .dummy {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-#video ul .zoom {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-#top #bg-top {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  background-size: cover;
-}
 #top .main {
   position: relative;
   color: #0082C8;
-  pointer-events: none;
   padding: 20px 0;
 }
 #top .main .part {
@@ -178,11 +111,6 @@ img {
 #top .main .status li {
   width: 33.3%;
 }
-#top .watch {
-  position: absolute;
-  bottom: 40px;
-  left: 40px;
-}
 #top .howto {
   position: absolute;
   bottom: 40px;
@@ -197,31 +125,8 @@ img {
   color: #F7F7F7;
 }
 
-#watch {
-  display: none;
-  height: 100%;
-  min-height: 800px;
-  pointer-events: none;
-}
-#watch h2 {
-  position: fixed;
-  top: 96px;
-  left: 38px;
-  font-weight: 700;
-  font-size: 20px;
-  color: #F7F7F7;
-}
-#watch .howto {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  pointer-events: auto;
-}
-
 #play {
   display: none;
-  height: 100%;
-  min-height: 800px;
   pointer-events: none;
 }
 #play h2 {
@@ -231,6 +136,34 @@ img {
   font-weight: 700;
   font-size: 20px;
   color: #F7F7F7;
+}
+#play .video {
+  position: relative;
+  width: calc(100% - 672px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+#play .video iframe {
+  position: absolute;
+}
+#play .video .caption {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+#play .video .caption .status {
+  margin-top: 22px;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+#play .video .caption h3 {
+  font-size: 40px;
+  text-align: center;
 }
 #play .timer {
   position: absolute;
@@ -256,29 +189,25 @@ img {
 
 #finish {
   display: none;
-  height: 100%;
   min-height: 800px;
-  background: transparent linear-gradient(180deg, #A5DDFF 0%, #A7E2FD 50%, #D6F5FF 100%) 0% 0% no-repeat padding-box;
-  pointer-events: none;
 }
 #finish .circle {
-  position: absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateY(0) translateX(-50%);
+  position: relative;
   width: 600px;
   height: 600px;
-  padding: 215px 0 0 154px;
+  margin: 70px auto 0;
   border: 1px solid #0082C8;
   border-radius: 300px;
   font-size: 24px;
   color: #0082C8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #finish .top {
   position: absolute;
   bottom: 40px;
   left: 40px;
-  pointer-events: auto;
   border: 4px solid #0082C8;
   color: #0082C8;
 }
@@ -290,7 +219,6 @@ img {
 #instruction {
   display: none;
   position: fixed;
-  height: 100%;
   padding-top: 40px;
   background: #222226;
 }
@@ -332,147 +260,4 @@ img {
   width: 100px;
   height: 100px;
   background: url(../img/arrow-left.svg) no-repeat;
-}
-
-@media screen and (max-width: 480px) {
-  #wrap {
-    min-width: auto;
-    height: auto;
-    min-height: auto;
-  }
-  #wrap #logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 220px;
-    height: 50px;
-  }
-  #wrap .page {
-    min-width: auto;
-  }
-  #wrap .main {
-    position: relative;
-    width: auto;
-    margin: 0 20px;
-    overflow: auto;
-  }
-  #wrap .mic {
-    position: absolute;
-    text-align: center;
-  }
-  #wrap .mic .icon {
-    position: absolute;
-    bottom: 66px;
-    left: 50%;
-    transform: translateY(0) translateX(-50%);
-  }
-  #wrap .mic p {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  #video {
-    position: static;
-    min-width: auto;
-    min-height: auto;
-    display: none;
-  }
-  #video ul {
-    width: 100%;
-    overflow: auto;
-  }
-
-  #top .main {
-    padding: 100px 0 40px;
-  }
-  #top .main .part {
-    padding-top: 25px;
-  }
-  #top .watch {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-  }
-  #top .howto {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  #watch h2 {
-    top: 80px;
-    left: 20px;
-  }
-  #watch .howto {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  #play {
-    position: fixed !important;
-  }
-  #play h2 {
-    top: 80px;
-    left: 20px;
-  }
-  #play .timer {
-    top: 88px;
-    right: 20px;
-  }
-  #play .mic {
-    bottom: 40px;
-    left: 0;
-    width: 100%;
-  }
-  #play .mic p {
-    text-align: center;
-  }
-
-  #finish {
-    min-height: auto;
-  }
-  #finish .circle {
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    width: 356px;
-    height: 356px;
-    padding: 100px 0 0 26px;
-    border-radius: 178px;
-  }
-  #finish .top {
-    bottom: 20px;
-    left: 20px;
-  }
-
-  #instruction {
-    height: calc(100% - 80px);
-    padding-top: 80px;
-  }
-  #instruction h2 {
-    position: fixed;
-    top: 80px;
-    left: 20px;
-  }
-  #instruction .main {
-    position: static;
-  }
-  #instruction .main .mic {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin: 25px 0;
-    transform: none;
-    text-align: center;
-  }
-  #instruction .main .mic p {
-    text-align: center;
-  }
-  #instruction .main .arrow-left {
-    position: static;
-    display: block;
-    margin: 40px 0 20px;
-  }
 }

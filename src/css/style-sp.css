@@ -2,7 +2,6 @@
   #wrap {
     min-width: auto;
     height: auto;
-    min-height: auto;
   }
   #wrap #logo {
     position: fixed;
@@ -13,6 +12,7 @@
   }
   #wrap .page {
     min-width: auto;
+    min-height: auto;
   }
   #wrap .main {
     position: relative;
@@ -36,17 +36,6 @@
     font-weight: 700;
   }
 
-  #video {
-    position: static;
-    min-width: auto;
-    min-height: auto;
-    display: none;
-  }
-  #video ul {
-    width: 100%;
-    overflow: auto;
-  }
-
   #top .main {
     padding: 100px 0 40px;
   }
@@ -64,22 +53,15 @@
     right: 20px;
   }
 
-  #watch h2 {
-    top: 80px;
-    left: 20px;
-  }
-  #watch .howto {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
-
   #play {
     position: fixed !important;
   }
   #play h2 {
     top: 80px;
     left: 20px;
+  }
+  #play .video {
+    width: 100%;
   }
   #play .timer {
     top: 88px;
@@ -98,12 +80,8 @@
     min-height: auto;
   }
   #finish .circle {
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
     width: 356px;
     height: 356px;
-    padding: 100px 0 0 26px;
     border-radius: 178px;
   }
   #finish .top {
@@ -112,7 +90,7 @@
   }
 
   #instruction {
-    height: calc(100% - 80px);
+    width: 100%;
     padding-top: 80px;
   }
   #instruction h2 {

@@ -29,72 +29,16 @@
 
 	<body>
 		<div id="wrap">
-			<div id="video">
-				<ul>
-					<li>
-						<iframe src="https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&roomId=tokyo-1&network=mesh" allow="microphone"></iframe>
-						<div class="caption">
-							<img src="img/circle.svg">
-							<div class="status">CONNECTED</div>
-							<h2>NEWYORK to LINZ</h2>
-						</div>
-						<a href="#" class="dummy"></a>
-					</li>
-					<li>
-						<iframe src="https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&roomId=tokyo-2&network=mesh" allow="microphone"></iframe>
-						<div class="caption">
-							<img src="img/circle.svg">
-							<div class="status">CONNECTED</div>
-							<h2>NEWYORK to LINZ</h2>
-						</div>
-						<a href="#" class="dummy"></a>
-					</li>
-					<li>
-						<iframe src="https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&roomId=tokyo-3&network=mesh" allow="microphone"></iframe>
-						<div class="caption">
-							<img src="img/circle.svg">
-							<div class="status">CONNECTED</div>
-							<h2>NEWYORK to LINZ</h2>
-						</div>
-						<a href="#" class="dummy"></a>
-					</li>
-					<li>
-						<iframe src="https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&roomId=linz-1&network=mesh" allow="microphone"></iframe>
-						<div class="caption">
-							<img src="img/circle.svg">
-							<div class="status">CONNECTED</div>
-							<h2>NEWYORK to LINZ</h2>
-						</div>
-						<a href="#" class="dummy"></a>
-					</li>
-					<li>
-						<iframe src="https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&roomId=linz-2&network=mesh" allow="microphone"></iframe>
-						<div class="caption">
-							<img src="img/circle.svg">
-							<div class="status">CONNECTED</div>
-							<h2>NEWYORK to LINZ</h2>
-						</div>
-						<a href="#" class="dummy"></a>
-					</li>
-					<li>
-						<iframe src="https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&roomId=linz-3&network=mesh" allow="microphone"></iframe>
-						<div class="caption">
-							<img src="img/circle.svg">
-							<div class="status">CONNECTED</div>
-							<h2>NEWYORK to LINZ</h2>
-						</div>
-						<a href="#" class="dummy"></a>
-					</li>
-				</ul>
-			</div>
-			<div id="watch" class="page">
-				<h2>WATCH</h2>
-				<a href="#howto" class="howto btn">
-					<span>HOW<br>TO<br>PLAY</span>
-				</a>
-			</div>
 			<div id="play" class="page">
 				<h2>PLAY</h2>
+				<div class="video">
+					<iframe src="" allow="microphone"></iframe>
+					<div class="caption">
+						<img src="img/circle.svg">
+						<div class="status">CONNECTED</div>
+						<h3>NEWYORK to LINZ</h3>
+					</div>
+				</div>
 				<div class="timer">
 					<svg>
 						<path fill="none" stroke="#F7F7F7" stroke-width="4" d="M21,2C10.5,2,2,10.5,2,21s8.5,19,19,19s19-8.5,19-19S31.5,2,21,2"/>
@@ -108,25 +52,18 @@
 				</div>
 			</div>
 			<div id="finish" class="page">
-				<a href="#" class="top btn">
-					<span>TOP</span>
-				</a>
+				<video class="bg" src="mov/aoa-test.mp4" autoplay playsinline muted loop></video>
 				<div class="circle">
 					<span>Thank you for Playing.<br>
 					<br>
 					After 5 seconds you will be<br>
 					taken to the top page.</span>
 				</div>
+				<a href="#" class="top btn"><span>TOP</span></a>
 			</div>
 			<div id="top" class="page">
-				<a href="#" class="watch btn">
-					<span>WATCH</span>
-				</a>
-				<a href="#howto" class="howto btn">
-					<span>HOW<br>TO<br>PLAY</span>
-				</a>
+				<video class="bg" src="mov/aoa-test.mp4" autoplay playsinline muted loop></video>
 				<div class="main">
-					<video id="bg-top" src="mov/aoa-test.mp4" autoplay playsinline muted loop></video>
 					<p>Dummy Text. Air on Air is an online participatory installation that delivers breath via the Internet and sends bubbles into the distant sky. Visitors can access a website and blow into a microphone to send soap bubbles into a distant land. As they fly into the sky, they are streamed to a browser and viewed from a first-person perspective through a screen. In this age of limited mobility and distance, this work gives us an opportunity to connect with the world beyond the screen with physicality and to recognize anew the invisible existence of air and wind.</p>
 					<div class="part">
 						<h3>About this Website</h3>
@@ -146,15 +83,16 @@
 					</div>
 					<div class="part">
 						<ul class="status">
-							<li>Tokyo 1 connected</li>
-							<li>Tokyo 2 connected</li>
-							<li>Tokyo 3 connected</li>
-							<li>Linz 1 connected</li>
-							<li>Linz 2 connected</li>
-							<li>Linz 3 connected</li>
+							<li><a href="#">Tokyo 1 connected</a></li>
+							<li><a href="#">Tokyo 2 connected</a></li>
+							<li><a href="#">Tokyo 3 connected</a></li>
+							<li><a href="#">Linz 1 connected</a></li>
+							<li><a href="#">Linz 2 connected</a></li>
+							<li><a href="#">Linz 3 connected</a></li>
 						</ul>
 					</div>
 				</div>
+				<a href="#howto" class="howto btn"><span>HOW<br>TO<br>PLAY</span></a>
 			</div>
 			<div id="instruction" class="page">
 				<h2>INSTRUCTION</h2>
@@ -177,9 +115,7 @@
 					<a href="#" class="arrow-left"></a>
 				</div>
 			</div>
-			<h1>
-				<a href="#" id="logo">Air on Air</a>
-			</h1>
+			<h1 id="logo">Air on Air</h1>
 		</div>
 	</body>
 </html>

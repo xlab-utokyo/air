@@ -1,22 +1,12 @@
 (($) => {
-	const TIME = 400, DUR = 10000, MW = 1280, MH = 800, SP = 480;
-	let W, H, VW, sp = false, liPos, mv = 0, zoom = false, total, vx = 0, vy = 0, timer;
+	const TIME = 400, DUR = 10000, MW = 1280, MH = 800, SP = 480, URL = "https://dadaa.github.io/air-on-air/?key=1143d56c-70c8-4ec7-86f7-2686add63e3e&network=mesh&roomId=", ROOM = ["tokyo-1", "tokyo-2", "tokyo-3", "linz-1", "linz-2", "linz-3"];
+	let W, H, VW, sp = false, timer;
 	
 	$(() => {
 		if (Math.min(window.innerWidth, window.innerHeight) <= SP) sp = true;
 		if (sp) $("head").append('<link rel="stylesheet" href="css/style-sp.css" type="text/css">');
 		
-		total = $("#video li").length;
-		vx = 0;
-		if (total % 3 == 0) {
-			vx = 3;
-		} else if (total % 2 == 0) {
-			vx = 2;
-		} else {
-			vx = 1;
-		}
-		vy = 1;
-		if (total > 3) vy = 2;
+		$("#wrap .bg")[0].play();
 		setSize();
 		$(window).on("orientationchange resize", setSize);
 		
@@ -24,71 +14,16 @@
 			e.preventDefault();
 		});
 		
-		$("#top .watch").on("click", (e) => {
+		$("#top .status a").on("click", (e) => {
 			e.preventDefault();
-			$("#watch").show();
-			$("#video").show();
+			const n = $(e.target).parent().index();
+			$("#play .video iframe").attr({src: URL + ROOM[n]});
+			$("#play").show();
 			setSize();
-			$("#top").fadeOut(TIME);
-		});
-		
-		$("#video li .dummy").on("click", (e) => {
-			e.preventDefault();
-			$(e.currentTarget).hide();
-			zoom = true;
-			mv = $(e.currentTarget).parent().index();
-			console.log($(this), mv)
-			const self = $("#video li").eq(mv);
-			self.after("<li></li>");
-			const next = self.next();
-			setSize();
-			const fw = self.parent().width(), fh = self.parent().height(), movW = 1080, movH = 1920, movSC = Math.max(fh/movH, fw/movW);
-			next.css({
-				width: 100 / vx + "%",
-				height: H / vy
-			});
-			liPos = self.position();
-			if (sp) {
-				$("#finish").css({top: liPos.top});
-				$("html, body").animate({
-					scrollTop: liPos.top
-				}, TIME, "easeOutQuart", (e) => {
-					$("body").css({
-						overflow: "hidden"
-					});
-				});
-			} else {
-				self.css({
-					position: "absolute",
-					top: liPos.top - $(window).scrollTop(),
-					left: liPos.left,
-					height: self.height(),
-					zIndex: 1
-				});
-				self.animate({
-					top: 0,
-					left: 0,
-					width: "100%",
-					height: H + "px"
-				}, TIME, "easeOutQuart", () => {
-					self.addClass("zoom");
-					self.removeAttr("style");
-				});
-				const inner = self.find("iframe");
-				inner.animate({
-					width: (movSC * movW) + "px",
-					height: (movSC * movH) + "px",
-					top: ((fh - movSC * movH) / 2) + "px",
-					left: ((fw -movSC * movW) / 2) + "px"
-				}, TIME, "easeOutQuart");
-			}
-			$("#watch").fadeOut(TIME);
-			$("#play").fadeIn(TIME, countDown);
-		});
-		
-		$("#play .play").on("click", (e) => {
-			e.preventDefault();
-			countDown();
+			$("#top").fadeOut(TIME, countDown);
+			$("html, body").animate({
+				scrollTop: 0
+			}, TIME, "easeOutQuart");
 		});
 		
 		$("#finish .top").on("click", (e) => {
@@ -102,35 +37,14 @@
 			$(window).scrollTop(0);
 			$("#instruction").fadeIn(TIME, () => {
 				$("#top").hide();
-				$("#video").hide();
 			});
 		});
 		
 		$("#instruction .arrow-left").on("click", (e) => {
 			e.preventDefault();
-			if ($("#watch").css("display") == "none") $("#top").show();
-			if ($("#video").css("display") == "none") $("#video").show();
+			$("#top").show();
 			$("#instruction").fadeOut(TIME);
 			setSize();
-		});
-		
-		$("#logo").on("click", (e) => {
-			e.preventDefault();
-			if ($("#instruction").css("display") != "none") {
-				$("#top").show();
-				$("#instruction").fadeOut(TIME);
-			} else {
-				if ($("#play").css("display") == "none") {
-					if ($("#top").css("display") == "none") {
-						$("#top").fadeIn(TIME, () => {
-							$("#watch").hide();
-							clearTimeout(timer);
-							$("#finish").hide();
-						});
-						setSize();
-					}
-				}
-			}
 		});
 	});
 	
@@ -146,55 +60,24 @@
 		if (sp) {
 			$("#top").height(Math.max(H, $("#top .main").height() + 140));
 		} else {
-			$("#video ul").height(H);
-			$("#top").height(Math.max(H + 40, $("#top .main").height() + 40));
-			$("#instruction").height(H - 40);
+//			$("#top").height(Math.max(H + 40, $("#top .main").height() + 40));
+//			$("#instruction").height(H - 40);
 		}
 		
-		$("#video li").each((i, elem) => {
-			if (sp) {
-				$(elem).css({
-					width: "100%",
-					height:  H
-				});
-				setDummy(elem);
-				setMov(elem);
-			} else {
-				if (zoom) {
-					if (i != mv) {
-						$(elem).css({
-							width: 100 / vx + "%",
-							height: H / vy
-						});
-						setDummy(elem);
-					}
-					setMov(elem);
-				} else {
-					$(elem).css({
-						width: 100 / vx + "%",
-						height: H / vy
-					});
-					setDummy(elem);
-					setMov(elem);
-				}
-			}
-		});
-	}
-	
-	const setDummy = (elem) => {
-		$(elem).find(".dummy").css({
-			width: $(elem).width(),
-			height: $(elem).height()
-		});
-	}
-	
-	const setMov = (elem) => {
-		const fw = $(elem).width(), fh = $(elem).height(), movW = 1080, movH = 1920, movSC = Math.max(fh/movH, fw/movW);
-		$(elem).find("iframe").css({
+		$("#play .video").height(H);
+		let fw = $("#play .video").width(), fh = $("#play .video").height(), movW = 1080, movH = 1920, movSC = Math.max(fh/movH, fw/movW);
+		$("#play .video iframe").css({
 			width: (movSC * movW) + "px",
 			height: (movSC * movH) + "px",
 			top: ((fh - movSC * movH) / 2) + "px",
 			left: ((fw -movSC * movW) / 2) + "px"
+		});
+		movW = 1920, movH = 1080, movSC = Math.max(H/movH, W/movW);
+		$("#wrap .bg").css({
+			width: (movSC * movW) + "px",
+			height: (movSC * movH) + "px",
+			top: ((H - movSC * movH) / 2) + "px",
+			left: ((W -movSC * movW) / 2) + "px"
 		});
 	}
 	
@@ -215,18 +98,11 @@
 				complete: () => {
 					$("#finish").delay(100).fadeIn(TIME, () => {
 						$("#play").hide();
-						zoom = false;
-						const self = $("#video li").eq(mv)
-						self.removeClass("zoom");
-						self.find(".dummy").show();
-						self.next().remove();
 						setSize();
 						if (sp) {
-							$("body").removeAttr("style");
-							$("#video").hide();
 							$("#finish").css({top: 0});
 						}
-						timer = setTimeout(toTop, 5000);
+//						timer = setTimeout(toTop, 5000);
 					});
 				}
 			});
