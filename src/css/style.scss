@@ -6,16 +6,16 @@ $blue: #0082C8;
 $mw: 1280px;
 $mh: 800px;
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://use.typekit.net/irz5cel.css");
 
 html, body {height: 100%;}
 body {
 	background: $black;
 	color: $white;
-	font-size: 16px;
+	font-size: 18px;
 	-webkit-text-size-adjust: 100%;
-	font-family: 'Open Sans', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
-	line-height: 1.5;
+	font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+	line-height: 1.4;
 }
 a {
 	text-decoration: none;
@@ -30,14 +30,19 @@ img {
 	
 	#logo {
 		position: fixed;
-		top: 40px;
-		left: 40px;
-		width: 200px;
-		height: 46px;
-		background: url(../img/logo.svg) no-repeat;
-		text-indent: 100%;
-		white-space: nowrap;
-		overflow: hidden;
+		top: 10px;
+		left: 20px;
+		font-weight: 100;
+		font-size: 60px;
+		line-height: 1;
+		letter-spacing: -1px;
+	}
+	.subtitle {
+		position: fixed;
+		top: 68px;
+		left: 20px;
+		font-weight: 700;
+		font-size: 20px;
 	}
 	.page {
 		position: absolute;
@@ -45,6 +50,7 @@ img {
 		left: 0;
 		width: 100%;
 		min-width: $mw;
+		height: 100%;
 		min-height: $mh;
 	}
 	.main {
@@ -55,41 +61,72 @@ img {
 	.bg {
 		position: fixed;
 	}
-	.btn {
-		display: flex;
-		width: 100px;
-		height: 100px;
-		border: 4px solid $white;
-		border-radius: 50px;
-		font-size: 24px;
-		font-weight: 700;
+	.btn-short {
+		display: inline-block;
+		padding: 12px 16px 16px 16px;
+		border: solid 2px $white;
+		border-radius: 4px;
+		font-size: 16px;
 		color: $white;
-		text-align: center;
-		line-height: 1;
-		letter-spacing: 0.1px;
 		transition: all 200ms 0s;
-		justify-content: center;
-		align-items: center;
 		
 		&:hover {
 			background: $white;
-			color: $black;
+			color: $blue;
+		}
+	}
+	.btn-long {
+		display: block;
+		width: 100%;
+		padding: 12px 0 16px;
+		border-radius: 4px;
+		border: solid 2px $white;
+		color: $white;
+		font-size: 16px;
+		text-align: center;
+		transition: all 200ms 0s;
+		
+		&:hover {
+			background: $white;
+			color: $blue;
 		}
 	}
 	.mic {
 		position: absolute;
+		left: calc(50% - 140px);
+		bottom: 16px;
+		width: 280px;
 		text-align: center;
 		
 		.icon {
-			position: absolute;
-			bottom: 66px;
-			left: 50%;
-			transform: translateY(0) translateX(-50%);
+			width: 64px;
+			margin-bottom: 16px;
+		}
+		.indicator {
+			width: 240px;
+			height: 20px;
+			display: flex;
+			margin: 0 20px 8px;
+			
+			li {
+				width: 4px;
+				height: 100%;
+				margin: 0 4px;
+				background-color: $white;
+				border-radius: 1px;
+				
+				&.active {
+					background-color: #ff1ad9;
+				}
+				&.inactive {
+					background-color: #12bc00;
+				}
+			}
 		}
 		p {
-			margin-top: 20px;
-			font-size: 18px;
-			font-weight: 700;
+			font-weight: 400;
+			font-size: 16px;
+			text-align: center;
 		}
 	}
 }
@@ -97,57 +134,62 @@ img {
 #top {
 	.main {
 		position: relative;
-		color: $blue;
-		padding: 20px 0;
+		padding: 32px 0;
 		
 		.part {
 			padding-top: 20px;
 			border-top: 1px solid $blue;
 		}
 		h3 {
-			font-size: 24px;
+			font-weight: 100;
+			font-size: 32px;
+			margin-bottom: 8px;
 		}
 		p {
-			margin: 20px 0;
-			font-size: 18px;
+			margin-bottom: 16px;
+			font-weight: 400;
+		}
+		.small {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		hr {
+			width: 240px;
+			border: 0px;
+			border-top: 1px solid $white;
+			margin-top: 24px;
+			margin-bottom: 16px;
 		}
 		.status {
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: space-between;
 			
 			li {
-				width: 33.3%;
+				width: calc(100% / 3 - 4px);
+				margin-bottom: 6px;
+				font-weight: 400;
+				font-size: 16px;
+				
+				.btn-long {
+					p {
+						margin: 0;
+						font-size: 12px;
+						text-align: center;
+					}
+					&.off {
+						pointer-events: none;
+						opacity: 0.4;
+					}
+				}
 			}
-		}
-	}
-	.howto {
-		position: absolute;
-		bottom: 40px;
-		right: 40px;
-	}
-	.btn {
-		border: 4px solid $blue;
-		color: $blue;
-		
-		&:hover {
-			background: $blue;
-			color: $white;
 		}
 	}
 }
 
 #play {
 	display: none;
-	pointer-events: none;
 	
-	h2 {
-		position: fixed;
-		top: 96px;
-		left: 38px;
-		font-weight: 700;
-		font-size: 20px;
-		color: $white;
-	}
 	.video {
 		position: relative;
 		width: calc(100% - 672px);
@@ -157,78 +199,41 @@ img {
 		iframe {
 			position: absolute;
 		}
-		.caption {
-			position: absolute;
-			top: 72px;
-			left: 0;
-			width: 100%;
-			text-align: center;
-			pointer-events: none;
-			
-			.status {
-				margin-top: 22px;
-				font-weight: 700;
-				font-size: 20px;
-				text-align: center;
-				text-decoration: underline;
-			}
-			h3 {
-				font-size: 40px;
-				text-align: center;
-			}
-		}
 	}
 	.timer {
 		position: absolute;
-		top: 60px;
-		right: 40px;
+		top: 20px;
+		right: 20px;
 		
 		svg {
-			position: absolute;
-			top: 0;
-			right: 90px;
-			width: 42px;
-			height: 42px;
+			width: 86px;
+			height: 86px;
 		}
 		.second {
-			margin-top: -4px;
-			font-size: 48px;
+			position: absolute;
+			top: 28px;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font-size: 24px;
 			line-height: 1;
 		}
-	}
-	.mic {
-		bottom: 40px;
-		right: 30px;
 	}
 }
 
 #finish {
-	display: none;
 	min-height: $mh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	
-	.circle {
+	.end {
 		position: relative;
-		width: 600px;
-		height: 600px;
-		margin: 70px auto 0;
-		border: 1px solid $blue;
-		border-radius: 300px;
-		font-size: 24px;
-		color: $blue;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.top {
-		position: absolute;
-		bottom: 40px;
-		left: 40px;
-		border: 4px solid $blue;
-		color: $blue;
+		text-align: center;
 		
-		&:hover {
-			background: $blue;
-			color: $white;
+		.top {
+			margin-top: 24px;
+			font-size: 18px;
 		}
 	}
 }
@@ -239,16 +244,10 @@ img {
 	padding-top: 40px;
 	background: $black;
 	
-	h2 {
-		position: fixed;
-		top: 96px;
-		left: 38px;
-		font-weight: 700;
-		font-size: 20px;
-		color: $white;
-	}
 	.main {
+		padding-top: 20px;
 		background: $black;
+		border-top: 1px solid $white;
 		
 		h3 {
 			padding-top: 20px;
@@ -258,26 +257,95 @@ img {
 		ol {
 			margin: 20px 0;
 			font-size: 18px;
+			counter-reset: no 0;
 			
 			li {
 				margin: 8px 0;
+				
+				&:before {
+					counter-increment: no;
+					content: counter(no) ". ";
+				}
 			}
 		}
 		.small {
 			font-size: 14px;
 		}
-		.mic {
-			bottom: 40px;
-			left: 50%;
-			transform: translateY(0) translateX(-50%);
+		.close {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			width: 56px;
+			height: 56px;
+			background: url(../img/close.svg) no-repeat;
 		}
-		.arrow-left {
+	}
+}
+
+
+@media screen and (max-width: 748px) {
+	#wrap {
+		min-width: auto;
+		height: auto;
+		
+		#logo {
 			position: absolute;
-			bottom: 40px;
-			left: 40px;
-			width: 100px;
-			height: 100px;
-			background: url(../img/arrow-left.svg) no-repeat;
+		}
+		.subtitle {
+			position: absolute;
+		}
+		.page {
+			min-width: auto;
+			min-height: auto;
+		}
+		.main {
+			position: relative;
+			width: auto;
+			margin: 0 20px;
+			padding: 125px 0 20px;
+			overflow: auto;
+		}
+	}
+	
+	#top {
+		.main {
+			.status {
+				li {
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	#play {
+		position: fixed !important;
+		
+		.video {
+			width: 100%;
+		}
+		.timer {
+			top: 20px;
+			right: 20px;
+		}
+	}
+	
+	#finish {
+		min-height: auto;
+		
+		.end {
+			margin: 0 20px;
+			text-align: left;
+		}
+	}
+	
+	#instruction {
+		width: 100%;
+		padding-top: 0;
+		
+		.main {
+			position: static;
+			margin-top: 125px;
+			padding-top: 20px;
 		}
 	}
 }

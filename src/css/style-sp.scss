@@ -12,11 +12,10 @@ $mh: 800px;
 		height: auto;
 		
 		#logo {
-			position: fixed;
-			top: 20px;
-			left: 20px;
-			width: 220px;
-			height: 50px;
+			position: absolute;
+		}
+		.subtitle {
+			position: absolute;
 		}
 		.page {
 			min-width: auto;
@@ -26,114 +25,50 @@ $mh: 800px;
 			position: relative;
 			width: auto;
 			margin: 0 20px;
+			padding: 125px 0 20px;
 			overflow: auto;
-		}
-		.mic {
-			position: absolute;
-			text-align: center;
-			
-			.icon {
-				position: absolute;
-				bottom: 66px;
-				left: 50%;
-				transform: translateY(0) translateX(-50%);
-			}
-			p {
-				margin-top: 20px;
-				font-size: 18px;
-				font-weight: 700;
-			}
 		}
 	}
 	
 	#top {
 		.main {
-			padding: 100px 0 40px;
-			
-			.part {
-				padding-top: 25px;
+			.status {
+				li {
+					width: 100%;
+				}
 			}
-		}
-		.watch {
-			position: fixed;
-			bottom: 20px;
-			left: 20px;
-		}
-		.howto {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
 		}
 	}
 	
 	#play {
 		position: fixed !important;
 		
-		h2 {
-			top: 80px;
-			left: 20px;
-		}
 		.video {
 			width: 100%;
 		}
 		.timer {
-			top: 88px;
+			top: 20px;
 			right: 20px;
-		}
-		.mic {
-			bottom: 40px;
-			left: 0;
-			width: 100%;
-			
-			p {
-				text-align: center;
-			}
 		}
 	}
 	
 	#finish {
 		min-height: auto;
 		
-		.circle {
-			width: 356px;
-			height:356px;
-			border-radius: 178px;
-		}
-		.top {
-			bottom: 20px;
-			left: 20px;
+		.end {
+			margin: 0 20px;
+			text-align: left;
 		}
 	}
 	
 	#instruction {
 		width: 100%;
-		padding-top: 80px;
+		padding-top: 0;
 		
-		h2 {
-			position: fixed;
-			top: 80px;
-			left: 20px;
-		}
 		.main {
 			position: static;
-			
-			.mic {
-				position: relative;
-				bottom: auto;
-				left: auto;
-				margin: 25px 0;
-				transform: none;
-				text-align: center;
-				
-				p {
-					text-align: center;
-				}
-			}
-			.arrow-left {
-				position: static;
-				display: block;
-				margin: 40px 0 20px;
-			}
+			margin-top: 125px;
+			padding-top: 20px;
 		}
 	}
 }

@@ -4,11 +4,10 @@
     height: auto;
   }
   #wrap #logo {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 220px;
-    height: 50px;
+    position: absolute;
+  }
+  #wrap .subtitle {
+    position: absolute;
   }
   #wrap .page {
     min-width: auto;
@@ -18,103 +17,40 @@
     position: relative;
     width: auto;
     margin: 0 20px;
+    padding: 125px 0 20px;
     overflow: auto;
   }
-  #wrap .mic {
-    position: absolute;
-    text-align: center;
-  }
-  #wrap .mic .icon {
-    position: absolute;
-    bottom: 66px;
-    left: 50%;
-    transform: translateY(0) translateX(-50%);
-  }
-  #wrap .mic p {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 700;
-  }
 
-  #top .main {
-    padding: 100px 0 40px;
-  }
-  #top .main .part {
-    padding-top: 25px;
-  }
-  #top .watch {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-  }
-  #top .howto {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+  #top .main .status li {
+    width: 100%;
   }
 
   #play {
     position: fixed !important;
   }
-  #play h2 {
-    top: 80px;
-    left: 20px;
-  }
   #play .video {
     width: 100%;
   }
   #play .timer {
-    top: 88px;
+    top: 20px;
     right: 20px;
-  }
-  #play .mic {
-    bottom: 40px;
-    left: 0;
-    width: 100%;
-  }
-  #play .mic p {
-    text-align: center;
   }
 
   #finish {
     min-height: auto;
   }
-  #finish .circle {
-    width: 356px;
-    height: 356px;
-    border-radius: 178px;
-  }
-  #finish .top {
-    bottom: 20px;
-    left: 20px;
+  #finish .end {
+    margin: 0 20px;
+    text-align: left;
   }
 
   #instruction {
     width: 100%;
-    padding-top: 80px;
-  }
-  #instruction h2 {
-    position: fixed;
-    top: 80px;
-    left: 20px;
+    padding-top: 0;
   }
   #instruction .main {
     position: static;
-  }
-  #instruction .main .mic {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin: 25px 0;
-    transform: none;
-    text-align: center;
-  }
-  #instruction .main .mic p {
-    text-align: center;
-  }
-  #instruction .main .arrow-left {
-    position: static;
-    display: block;
-    margin: 40px 0 20px;
+    margin-top: 125px;
+    padding-top: 20px;
   }
 }

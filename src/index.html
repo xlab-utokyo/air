@@ -30,92 +30,115 @@
 	<body>
 		<div id="wrap">
 			<div id="play" class="page">
-				<h2>PLAY</h2>
 				<div class="video">
 					<iframe src="" allow="microphone"></iframe>
-					<div class="caption">
-						<img src="img/circle.svg">
-						<div class="status">CONNECTED</div>
-						<h3>NEWYORK to LINZ</h3>
-					</div>
 				</div>
+				<h2 class="subtitle">PLAY</h2>
 				<div class="timer">
 					<svg>
-						<path fill="none" stroke="#F7F7F7" stroke-width="4" d="M21,2C10.5,2,2,10.5,2,21s8.5,19,19,19s19-8.5,19-19S31.5,2,21,2"/>
+						<path fill="none" stroke="#F7F7F7" stroke-width="2" d="M43,1C19.8,1,1,19.8,1,43s18.8,42,42,42s42-18.8,42-42S66.2,1,43,1"/>
 					</svg>
-					<div class="second"></div>
+					<div class="second">0s</div>
 				</div>
 				<div class="mic">
-					<img src="img/mic.svg" class="icon">
-					<img src="img/mic-meter.svg" class="meter">
-					<p>Breathe on the microphone.</p>
+					<img class="icon" src="img/mic.svg"/>
+					<ul class="indicator">
+						<li class="active"></li>
+						<li class="inactive"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<p>Breathe toward the microphone.</p>
 				</div>
 			</div>
 			<div id="finish" class="page">
 				<video class="bg" src="mov/aoa-test.mp4" autoplay playsinline muted loop></video>
-				<div class="circle">
-					<span>Thank you for Playing.<br>
-					<br>
-					After 5 seconds you will be<br>
-					taken to the top page.</span>
+				<div class="end">
+					<p>Thank you for Playing.  After 5 seconds you will be taken to the top page.</p>
+					<a class="btn-short top" href="#">← Top page</a>
 				</div>
-				<a href="#" class="top btn"><span>TOP</span></a>
 			</div>
 			<div id="top" class="page">
 				<video class="bg" src="mov/aoa-test.mp4" autoplay playsinline muted loop></video>
 				<div class="main">
-					<p>Dummy Text. Air on Air is an online participatory installation that delivers breath via the Internet and sends bubbles into the distant sky. Visitors can access a website and blow into a microphone to send soap bubbles into a distant land. As they fly into the sky, they are streamed to a browser and viewed from a first-person perspective through a screen. In this age of limited mobility and distance, this work gives us an opportunity to connect with the world beyond the screen with physicality and to recognize anew the invisible existence of air and wind.</p>
-					<div class="part">
-						<h3>About this Website</h3>
-						<p>このウェブサイト上では、Air on Airの観賞と体験ができます。<br>
-							観賞では、あなたは、他者がリアルタイムに操作している状態を見ることが出来ます。<br>
-							体験では、あなたは、30秒の間実際に空気を送る事で自分でシャボン玉を送る事が出来ます。</p>
-					</div>
-					<div class="part">
-						<h3>Credit</h3>
-						<p>Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text.Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text. Dummy Text.Dummy Text. Dummy Text.</p>
-					</div>
-					<div class="part">
-						<h3>Credit</h3>
-						<p>このウェブサイト上では、Air on Airの観賞と体験ができます。<br>
-							観賞では、あなたは、他者がリアルタイムに操作している状態を見ることが出来ます。<br>
-							体験では、あなたは、30秒の間実際に空気を送る事で自分でシャボン玉を送る事が出来ます。</p>
-					</div>
-					<div class="part">
-						<ul class="status">
-							<li><a href="#">Tokyo 1 connected</a></li>
-							<li><a href="#">Tokyo 2 connected</a></li>
-							<li><a href="#">Tokyo 3 connected</a></li>
-							<li><a href="#">Linz 1 connected</a></li>
-							<li><a href="#">Linz 2 connected</a></li>
-							<li><a href="#">Linz 3 connected</a></li>
-						</ul>
-					</div>
+					<h3>Concept</h3>
+					<p>Dummy text Air on Air is an online participatory installation that uses the Internet to deliver breath and blow bubbles into the sky at a distance. You can blow bubbles to a remote location by going to the website and blowing into the microphone. In these times of constraints of movement and distance, this experience provides an opportunity to connect with the world beyond the screen, with physicality, and to remind us of the invisible presence of air.</p>
+					<hr>
+					<h3>How to Play</h3>
+					<p>You can actually blow bubbles into the sky in the distance at this site. To participate you will need to use a microphone. If you want to check if the microphone is working properly, please refer to "Instruction Mode". To play, select a location from "Choose a location". In this work, data is acquired and used from the microphone. For more information, please see our Privacy Policy.</p>
+					<a class="btn-short howto" href="#">Mic Test</a>
+					<hr>
+					<h3>Play: Choose a location</h3>
+					<p>Select the button with the "CONNECTED" indication below to move to the location. You can now access the skies in Tokyo (Japan) and Linz (Austria). </p>
+					<p>The dates and times of each event are as follows.<br>Tokyo (Japan): 10am - 7pm, 00 - 00 September 2020 (UTC)<br>Linz (Linz): 10am - 7pm, 00 - 00 September 2020 (UTC)</p>
+					<ul class="status">
+						<li><a href="#" class="btn-long">TOKYO-1<p>PLAY</p></a></li>
+						<li><a href="#" class="btn-long">TOKYO-2<p>PLAY</p></a></li>
+						<li><a href="#" class="btn-long off">TOKYO-3<p>BUSY</p></a></li>
+						<li><a href="#" class="btn-long off">LINZ-1<p>CLOSED</p></a></li>
+						<li><a href="#" class="btn-long off">LINZ-2<p>CLOSED</p></a></li>
+						<li><a href="#" class="btn-long off">LINZ-3<p>CLOSED</p></a></li>
+					</ul>
+					<hr>
+					<h3>Credit</h3>
+					<p class="small">Yasuaki Kakehi, Daisuke Akatsuka, Juri Fujii, Yoshimori Yoshikawa, Joung Min Han<br>Cooperation: Wataru Date, Yasuaki Kakehi Laboratory<br>&copy 2020 xlab.</p>
 				</div>
-				<a href="#howto" class="howto btn"><span>HOW<br>TO<br>PLAY</span></a>
 			</div>
 			<div id="instruction" class="page">
-				<h2>INSTRUCTION</h2>
+				<h2 class="subtitle">INSTRUCTION</h2>
 				<div class="main">
-					<div class="mic">
-						<img src="img/mic.svg" class="icon">
-						<img src="img/mic-meter.svg" class="meter">
-						<p>Breathe on the microphone.</p>
-					</div>
-					<h3>How to Play: Microphone test</h3>
+					<p>This page will guide you through the process of making sure your microphone is working.</p>
 					<ol>
-						<li>1: Check the position of the microphone on the device.</li>
-						<li>2: Breathe on the microphone.</li>
-						<li>3: Make sure your microphone is responding.</li>
+						<li>Check the position of the microphone on the device.</li>
+						<li>Breathe on the microphone.</li>
+						<li>Make sure your microphone is responding.</li>
 					</ol>
-					<h3 class="small">Attention:</h3>
-					<p class="small">Dummy Text. 本作品Air on Airでは、下記の情報を利用します。詳しくはサイトポリシーをご覧ください。<br>
-						・場所の情報<br>
-						・音声情報</p>
-					<a href="#" class="arrow-left"></a>
+					<div class="mic">
+						<img class="icon" src="img/mic.svg"/>
+						<ul class="indicator">
+							<li class="active"></li>
+							<li class="inactive"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<p>Breathe toward the microphone.</p>
+					</div>
+					<a href="#" class="close"></a>
 				</div>
 			</div>
-			<h1 id="logo">Air on Air</h1>
+			<h1 id="logo">Air  on  Air</h1>
 		</div>
 	</body>
 </html>

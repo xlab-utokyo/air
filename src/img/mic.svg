@@ -1,6 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="42" height="64" viewBox="0 0 42 64">
-  <g id="グループ_13" data-name="グループ 13" transform="translate(-29 -17.975)">
-    <path id="パス_33" data-name="パス 33" d="M50,65.975a12,12,0,0,0,12-12v-24a12,12,0,1,0-24,0v24A12,12,0,0,0,50,65.975Z" fill="#f7f7f7"/>
-    <path id="パス_34" data-name="パス 34" d="M51,73.924A21.009,21.009,0,0,0,71,52.975H69a19,19,0,1,1-38,0H29A21.009,21.009,0,0,0,49,73.924v6.051H29v2H71v-2H51Z" fill="#f7f7f7"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F7F7F7;}
+</style>
+<path class="st0" d="M21,0C9.4,0,0,9.4,0,21s9.4,21,21,21s21-9.4,21-21S32.6,0,21,0z M17,13.1c0-2.3,1.8-4,4-4s4,1.8,4,4v8
+	c0,2.2-1.8,4-4,4s-4-1.8-4-4V13.1z M28,29.7v0.7H14v-0.7h6.7v-2c-3.7-0.2-6.7-3.3-6.7-7h0.7c0,3.5,2.9,6.3,6.3,6.3s6.3-2.9,6.3-6.3
+	H28c0,3.7-3,6.8-6.7,7v2H28z"/>
 </svg>

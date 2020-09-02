@@ -4,11 +4,12 @@
 	
 	$(() => {
 		if (Math.min(window.innerWidth, window.innerHeight) <= SP) sp = true;
-		if (sp) $("head").append('<link rel="stylesheet" href="css/style-sp.css" type="text/css">');
+//		if (sp) $("head").append('<link rel="stylesheet" href="css/style-sp.css" type="text/css">');
 		
 		$("#wrap .bg")[0].play();
 		setSize();
 		$(window).on("orientationchange resize", setSize);
+		$("#finish").hide();
 		
 		$("a[href='#']").on("click", (e) => {
 			e.preventDefault();
@@ -40,11 +41,10 @@
 			});
 		});
 		
-		$("#instruction .arrow-left").on("click", (e) => {
+		$("#instruction .close").on("click", (e) => {
 			e.preventDefault();
 			$("#top").show();
 			$("#instruction").fadeOut(TIME);
-			setSize();
 		});
 	});
 	
@@ -55,13 +55,6 @@
 		} else {
 			W = Math.max(window.innerWidth, MW);
 			H = Math.max(window.innerHeight, MH);
-		}
-		
-		if (sp) {
-			$("#top").height(Math.max(H, $("#top .main").height() + 140));
-		} else {
-//			$("#top").height(Math.max(H + 40, $("#top .main").height() + 40));
-//			$("#instruction").height(H - 40);
 		}
 		
 		$("#play .video").height(H);
@@ -82,6 +75,7 @@
 	}
 	
 	const countDown = () => {
+		setSize();
 		const svg = $("#play svg").drawsvg({
 			duration: DUR,
 			easing: "linear"
@@ -98,15 +92,13 @@
 				complete: () => {
 					$("#finish").delay(100).fadeIn(TIME, () => {
 						$("#play").hide();
-						setSize();
-						if (sp) {
-							$("#finish").css({top: 0});
-						}
-//						timer = setTimeout(toTop, 5000);
+						timer = setTimeout(toTop, 5000);
 					});
 				}
 			});
-			svg.drawsvg("animate");
+			setTimeout(() => {
+				svg.drawsvg("animate");
+			}, 100);
 		});
 	}
 	
@@ -114,6 +106,5 @@
 		$("#top").fadeIn(TIME, () => {
 			$("#finish").hide();
 		});
-		setSize();
 	}
 })(jQuery);
