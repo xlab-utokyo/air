@@ -4,8 +4,6 @@
 	let currentUser = null, thisUser = null, isAlreadyTested = false, peer, room, roomId, processor, isAlreadyPlayed;
 	
 	$(() => {
-		if (Math.min(window.innerWidth, window.innerHeight) <= SP) sp = true;
-		
 		$("#wrap .bg")[0].play();
 		setSize();
 		$(window).on("orientationchange resize", setSize);
@@ -55,6 +53,7 @@
 	});
 	
 	const setSize = () => {
+		if (window.innerWidth <= SP) sp = true;
 		if (sp) {
 			W = window.innerWidth;
 			H = window.innerHeight;
