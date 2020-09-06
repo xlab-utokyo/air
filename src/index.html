@@ -21,9 +21,12 @@
 		<link rel="stylesheet" href="css/reset.css" type="text/css">
 		<link rel="stylesheet" href="css/style.css" type="text/css">
 		
+		<script src="js/check.js" type="text/javascript"></script>
+		<script src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js" type="text/javascript"></script>
 		<script src="js/jquery.js" type="text/javascript"></script>
 		<script src="js/jquery.easing.js" type="text/javascript"></script>
 		<script src="js/jquery.drawsvg.js" type="text/javascript"></script>
+		<script src="js/device-list.js" type="text/javascript"></script>
 		<script src="js/air.js" type="text/javascript"></script>
 	</head>
 
@@ -31,7 +34,7 @@
 		<div id="wrap">
 			<div id="play" class="page">
 				<div class="video">
-					<iframe src="" allow="microphone"></iframe>
+					<video id="device"></video>
 				</div>
 				<h2 class="subtitle">PLAY</h2>
 				<div class="timer">
@@ -71,7 +74,7 @@
 				<video class="bg" src="mov/aoa-test.mp4" autoplay playsinline muted loop></video>
 				<div class="end">
 					<p>Thank you for Playing.  After 5 seconds you will be taken to the top page.</p>
-					<a class="btn-short top" href="#">← Top page</a>
+					<button class="btn-short top">← Top page</button>
 				</div>
 			</div>
 			<div id="top" class="page">
@@ -82,19 +85,12 @@
 					<hr>
 					<h3>How to Play</h3>
 					<p>You can actually blow bubbles into the sky in the distance at this site. To participate you will need to use a microphone. If you want to check if the microphone is working properly, please refer to "Instruction Mode". To play, select a location from "Choose a location". In this work, data is acquired and used from the microphone. For more information, please see our Privacy Policy.</p>
-					<a class="btn-short howto" href="#">Mic Test</a>
+					<button class="btn-short howto">Mic Test</button>
 					<hr>
 					<h3>Play: Choose a location</h3>
 					<p>Select the button with the "CONNECTED" indication below to move to the location. You can now access the skies in Tokyo (Japan) and Linz (Austria). </p>
 					<p>The dates and times of each event are as follows.<br>Tokyo (Japan): 10am - 7pm, 00 - 00 September 2020 (UTC)<br>Linz (Linz): 10am - 7pm, 00 - 00 September 2020 (UTC)</p>
-					<ul class="status">
-						<li><a href="#" class="btn-long">TOKYO-1<p>PLAY</p></a></li>
-						<li><a href="#" class="btn-long">TOKYO-2<p>PLAY</p></a></li>
-						<li><a href="#" class="btn-long off">TOKYO-3<p>BUSY</p></a></li>
-						<li><a href="#" class="btn-long off">LINZ-1<p>CLOSED</p></a></li>
-						<li><a href="#" class="btn-long off">LINZ-2<p>CLOSED</p></a></li>
-						<li><a href="#" class="btn-long off">LINZ-3<p>CLOSED</p></a></li>
-					</ul>
+					<ul class="status"></ul>
 					<hr>
 					<h3>Credit</h3>
 					<p class="small">Yasuaki Kakehi, Daisuke Akatsuka, Juri Fujii, Yoshimori Yoshikawa, Joung Min Han<br>Cooperation: Wataru Date, Yasuaki Kakehi Laboratory<br>&copy 2020 xlab.</p>
@@ -109,6 +105,7 @@
 						<li>Breathe on the microphone.</li>
 						<li>Make sure your microphone is responding.</li>
 					</ol>
+					<button class="btn-short test">Test</button>
 					<div class="mic">
 						<img class="icon" src="img/mic.svg"/>
 						<ul class="indicator">

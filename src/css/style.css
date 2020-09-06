@@ -21,6 +21,15 @@ img {
   vertical-align: bottom;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
 #wrap {
   width: 100%;
   min-width: 1280px;
@@ -60,7 +69,7 @@ img {
 }
 #wrap .btn-short {
   display: inline-block;
-  padding: 12px 16px 16px 16px;
+  padding: 14px 16px 16px;
   border: solid 2px #F7F7F7;
   border-radius: 4px;
   font-size: 16px;
@@ -74,7 +83,7 @@ img {
 #wrap .btn-long {
   display: block;
   width: 100%;
-  padding: 12px 0 16px;
+  padding: 14px 0 16px;
   border-radius: 4px;
   border: solid 2px #F7F7F7;
   color: #F7F7F7;
@@ -180,8 +189,9 @@ img {
   margin: 0 auto;
   overflow: hidden;
 }
-#play .video iframe {
+#play .video #device {
   position: absolute;
+  border: 1px solid #fff;
 }
 #play .timer {
   position: absolute;
