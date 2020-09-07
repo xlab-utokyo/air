@@ -1,12 +1,28 @@
 (($) => {
-	const TIME = 400, DUR = 30000, MW = 1280, MH = 800, SP = 480, THRESHOLD = 0.1;
-	let W, H, VW, sp = false, timer;
+	const TIME = 400, DUR = 3000, MW = 1280, MH = 800, SP = 480, THRESHOLD = 0.1;
+	let W, H, VW, sp = false, pc = true, timer;
 	let currentUser = null, thisUser = null, isAlreadyTested = false, peer, room, roomId, processor, isAlreadyPlayed;
 	
 	$(() => {
-		$("#wrap .bg")[0].play();
+		if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0) {
+			pc = false;
+			$("video.bg").remove();
+		} else if (navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+			pc = false;
+			$("video.bg").remove();
+		} else {
+			$("img.bg").remove();
+			$("#wrap .bg")[0].play();
+		}
 		setSize();
 		$(window).on("orientationchange resize", setSize);
+		$(window).on("scroll", () => {
+			if (pc) {
+				scrollFixed();			
+			} else {
+				setSize();
+			}
+		});
 		$("#finish").hide();
 		
 		$("a[href='#']").on("click", (e) => {
@@ -40,6 +56,7 @@
 			$(window).scrollTop(0);
 			$("#instruction").fadeIn(TIME, () => {
 				$("#top").hide();
+				setSize();
 			});
 		});
 		
@@ -50,35 +67,57 @@
 			$("#top").show();
 			$("#instruction").fadeOut(TIME);
 		});
+		
+		$(".policy").on("click", (e) => {
+			e.preventDefault();
+			$(window).scrollTop(0);
+			$("#policy").fadeIn(TIME, () => {
+				$("#top").hide();
+				setSize();
+			});
+		});
+		
+		$("#policy .close").on("click", (e) => {
+			e.preventDefault();
+			$("#top").show();
+			$("#policy").fadeOut(TIME);
+		});
 	});
 	
 	const setSize = () => {
 		if (window.innerWidth <= SP) sp = true;
 		if (sp) {
-			W = window.innerWidth;
+			W = document.body.clientWidth;
 			H = window.innerHeight;
 		} else {
-			W = Math.max(window.innerWidth, MW);
+			W = Math.max(document.body.clientWidth, MW);
 			H = Math.max(window.innerHeight, MH);
 		}
 		
 		$("#play .video").height(H);
-		let fw = $("#play .video").width(), fh = $("#play .video").height(), movW = 1080, movH = 1920, movSC = Math.max(fh/movH, fw/movW);
+		let fw = $("#play .video").width(), fh = $("#play .video").height(), movW = 3, movH = 4, movSC = Math.max(fh/movH, fw/movW);
 		$("#play #device").css({
 			width: (movSC * movW) + "px",
 			height: (movSC * movH) + "px",
 			top: ((fh - movSC * movH) / 2) + "px",
 			left: ((fw -movSC * movW) / 2) + "px"
 		});
-		movW = 1920, movH = 1080, movSC = Math.max(H/movH, W/movW);
+		movW = 16, movH = 9, movSC = Math.max(H/movH, W/movW);
 		$("#wrap .bg").css({
 			width: (movSC * movW) + "px",
 			height: (movSC * movH) + "px",
 			top: ((H - movSC * movH) / 2) + "px",
 			left: ((W -movSC * movW) / 2) + "px"
 		});
+		
+		scrollFixed();
 	}
 	
+	const scrollFixed = () => {
+		$("#logo, .subtitle").css("left", -$(window).scrollLeft() + 20);
+		$("#instruction .mic").css("left", -$(window).scrollLeft() + (W/2 - 140));
+		$(".close").css("left", -$(window).scrollLeft() + (W - 76));
+	}
 	const countDown = () => {
 		setSize();
 		const svg = $("#play svg").drawsvg({
@@ -112,9 +151,6 @@
 			$("#finish").hide();
 		});
 	}
-	
-	
-	
 	
 	
 // -----skyway---------------------------------------------

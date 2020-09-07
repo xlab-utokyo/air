@@ -9,6 +9,7 @@ class DeviceList {
       const link = document.createElement("button");
       link.classList.add("off", "btn-long");
       link.id = room;
+        link.classList.remove("off");
 	  
       const nameLabel = document.createElement("span");
       nameLabel.textContent = label;
@@ -61,7 +62,7 @@ class DeviceList {
         link.classList.remove("off");
         statusLabel.textContent = "PLAY";
       } else {
-        link.classList.add("off");
+//        link.classList.add("off");
         statusLabel.textContent = "BUSY";
       }
     });

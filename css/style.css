@@ -14,11 +14,19 @@ body {
 }
 
 a {
+  color: #F7F7F7;
+}
+a:hover {
   text-decoration: none;
 }
 
 img {
   vertical-align: bottom;
+}
+
+p {
+  margin-bottom: 16px;
+  font-weight: 400;
 }
 
 strong {
@@ -32,6 +40,7 @@ button {
   outline: none;
   padding: 0;
   appearance: none;
+  color: #F7F7F7;
 }
 
 #wrap {
@@ -46,6 +55,7 @@ button {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
+  pointer-events: none;
 }
 #wrap .subtitle {
   position: fixed;
@@ -70,6 +80,28 @@ button {
 }
 #wrap .bg {
   position: fixed;
+  background: url("img/air.png") no-repeat;
+  background-size: cover;
+}
+#wrap hr {
+  width: 240px;
+  border: 0px;
+  border-top: 1px solid #F7F7F7;
+  margin: 24px 0 16px;
+}
+#wrap hr.short {
+  width: 120px;
+  margin: 12px 0;
+}
+#wrap ol {
+  list-style-type: decimal;
+}
+#wrap ol li {
+  list-style-type: decimal;
+  list-style-position: inside;
+  text-indent: -1.1em;
+  padding-left: 1.1em;
+  margin-bottom: 8px;
 }
 #wrap .btn-short {
   display: inline-block;
@@ -77,7 +109,6 @@ button {
   border: solid 2px #F7F7F7;
   border-radius: 4px;
   font-size: 16px;
-  color: #F7F7F7;
   transition: all 200ms 0s;
 }
 #wrap .btn-short:hover {
@@ -90,7 +121,6 @@ button {
   padding: 14px 0 16px;
   border-radius: 4px;
   border: solid 2px #F7F7F7;
-  color: #F7F7F7;
   font-size: 16px;
   text-align: center;
   transition: all 200ms 0s;
@@ -98,6 +128,14 @@ button {
 #wrap .btn-long:hover {
   background: #F7F7F7;
   color: #0082C8;
+}
+#wrap .close {
+  position: fixed;
+  top: 20px;
+  left: calc(100% - 76px);
+  width: 56px;
+  height: 56px;
+  background: url(../img/close.svg) no-repeat;
 }
 #wrap .mic {
   position: absolute;
@@ -130,7 +168,6 @@ button {
   background-color: #12bc00;
 }
 #wrap .mic p {
-  font-weight: 400;
   font-size: 16px;
   text-align: center;
 }
@@ -139,32 +176,27 @@ button {
   position: relative;
   padding: 32px 0;
 }
-#top .main .part {
-  padding-top: 20px;
-  border-top: 1px solid #0082C8;
-}
 #top .main h3 {
   font-weight: 100;
   font-size: 32px;
   margin-bottom: 8px;
 }
-#top .main p {
-  margin-bottom: 16px;
-  font-weight: 400;
+#top .main strong {
+  letter-spacing: 0.1px;
 }
 #top .main .howto {
   margin-bottom: 16px;
 }
+#top .main .policy {
+  font-size: 1em;
+  text-decoration: underline;
+}
+#top .main .policy:hover {
+  text-decoration: none;
+}
 #top .main .small {
   font-size: 14px;
   line-height: 1.5;
-}
-#top .main hr {
-  width: 240px;
-  border: 0px;
-  border-top: 1px solid #F7F7F7;
-  margin-top: 24px;
-  margin-bottom: 16px;
 }
 #top .main .status {
   display: flex;
@@ -199,6 +231,7 @@ button {
 #play .video #device {
   position: absolute;
   border: 1px solid #fff;
+  transform: rotate(180deg);
 }
 #play .timer {
   position: absolute;
@@ -230,7 +263,7 @@ button {
   text-align: center;
 }
 #finish .end .top {
-  margin-top: 24px;
+  margin-top: 8px;
   font-size: 18px;
 }
 
@@ -241,37 +274,68 @@ button {
   background: #222226;
 }
 #instruction .main {
-  padding-top: 20px;
-  background: #222226;
+  position: relative;
+  padding: 20px 0 176px;
   border-top: 1px solid #F7F7F7;
 }
-#instruction .main h3 {
-  padding-top: 20px;
-  font-size: 24px;
-  border-top: 1px solid #F7F7F7;
+#instruction .main img {
+  margin: 30px 0;
 }
 #instruction .main ol {
-  margin: 20px 0;
-  font-size: 18px;
-  counter-reset: no 0;
+  list-style-type: decimal;
 }
 #instruction .main ol li {
-  margin: 8px 0;
+  list-style-type: decimal;
+  list-style-position: inside;
+  text-indent: -1.1em;
+  padding-left: 1.1em;
+  margin-bottom: 8px;
 }
-#instruction .main ol li:before {
-  counter-increment: no;
-  content: counter(no) ". ";
+#instruction .main .asterisk li {
+  list-style-position: inside;
+  text-indent: -0.7em;
+  padding-left: 0.7em;
+  margin-bottom: 8px;
+}
+#instruction .main .asterisk li:before {
+  content: "* ";
+}
+#instruction .main .test {
+  margin: 16px 0 8px;
 }
 #instruction .main .small {
   font-size: 14px;
 }
-#instruction .main .close {
+#instruction .main .mic-bg {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 56px;
-  height: 56px;
-  background: url(../img/close.svg) no-repeat;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-width: 1280px;
+  height: 176px;
+  background: linear-gradient(180deg, rgba(34, 34, 38, 0) 0%, rgba(34, 34, 38, 0.8) 15%);
+}
+#instruction .main .mic {
+  position: fixed;
+  left: calc(50% - 140px);
+}
+
+#policy {
+  display: none;
+  position: fixed;
+  padding-top: 40px;
+  background: #222226;
+}
+#policy .main {
+  position: relative;
+  padding: 20px 0;
+  border-top: 1px solid #F7F7F7;
+}
+#policy .main h3, #policy .main p {
+  margin-bottom: 24px;
+}
+#policy .main ol li {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 748px) {
@@ -325,6 +389,24 @@ button {
     padding-top: 0;
   }
   #instruction .main {
+    position: static;
+    margin-top: 125px;
+    padding: 20px 0 176px;
+  }
+  #instruction .main img {
+    width: 100%;
+    height: auto;
+  }
+  #instruction .main .mic {
+    position: fixed;
+    left: calc(50% - 140px);
+  }
+
+  #policy {
+    width: 100%;
+    padding-top: 0;
+  }
+  #policy .main {
     position: static;
     margin-top: 125px;
     padding-top: 20px;
