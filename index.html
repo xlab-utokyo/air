@@ -1,10 +1,157 @@
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Air on Air</title>
-    <script type="text/javascript" src="index.js"></script>
-  </head>
-  <body>
-    <label>Air on Air</label>
-  </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		<meta property="og:title" content="タイトル">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="">
+		<meta property="og:image" content="">
+		<meta property="og:site_name" content="">
+		<meta property="og:description" content="">
+		<meta property="fb:app_id" content="任意のID">
+		<title>Air on Air</title>
+		
+		<link rel="stylesheet" href="css/reset.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		
+		<script src="js/check.js" type="text/javascript"></script>
+		<script src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js" type="text/javascript"></script>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/jquery.easing.js" type="text/javascript"></script>
+		<script src="js/jquery.drawsvg.js" type="text/javascript"></script>
+		<script src="js/device-list.js" type="text/javascript"></script>
+		<script src="js/air.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="play" class="page">
+				<div class="video">
+					<video id="device"></video>
+				</div>
+				<h2 class="subtitle">PLAY</h2>
+				<div class="timer">
+					<svg>
+						<path fill="none" stroke="#F7F7F7" stroke-width="2" d="M43,1C19.8,1,1,19.8,1,43s18.8,42,42,42s42-18.8,42-42S66.2,1,43,1"/>
+					</svg>
+					<div class="second">0s</div>
+				</div>
+				<div class="mic">
+					<img class="icon" src="img/mic.svg"/>
+					<ul class="indicator">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<p>Breathe toward the microphone.</p>
+				</div>
+			</div>
+			<div id="finish" class="page">
+				<video class="bg" src="mov/AirOnAir.mp4" autoplay playsinline muted loop></video>
+				<div class="end">
+					<p>Thank you for participating.<br>
+						In 5 seconds, you will be automatically redirected to the top page.</p>
+					<button class="btn-short top">← Top page</button>
+				</div>
+			</div>
+			<div id="top" class="page">
+				<video class="bg" src="mov/AirOnAir.mp4" autoplay playsinline muted loop></video>
+				<div class="main">
+					<h3>Blow bubbles to another sky</h3>
+					<p>Air on Air is an online participatory installation that sends your breath via the Internet to blow bubbles in remote locations. When you visit the website and blow into your microphone, you can send bubbles into the foreign sky. In times when traveling is restricted and physical distancing is required, this work enables the audience to access distant places with a sense of physicality and recognize the invisible existence of air and space through the floating bubbles. </p>
+					<hr>
+					<h3>Schedule</h3>
+					<p>During Ars Electronica Festival 2020, you can access the skies in Tokyo/Japan and Linz/Austria. The dates and times of this exhibition are as follows:<br>
+						Tokyo: 9am-1pm CEST (UTC+2) | 4pm-8pm JST (UTC+9), Sep 9-13, 2020<br>
+						Linz: 10am-6pm CEST (UTC+2) | 5pm-1am JST (UTC+9), Sep 9-13, 2020</p>
+					<hr>
+					<h3>How to Participate</h3>
+					<p>Step1 Preparation:<br>
+						In order to detect your breath, this work will need to receive audio from the microphone of your PC or smartphone. Please refer to the following link for the privacy policy.<br>
+						We recommend that you check the position of the microphone on your device in advance in order to use it properly. To test your microphone, please visit the Mic Test page below.</p>
+						<button class="btn-short howto">Mic Test</button><br>
+						<p>Step 2 Participation:<br>
+						During the exhibition, up to 6 devices will be installed. To participate in Air on Air, select a device from the Play menu below. Once connected, the experience will last for up to 30 seconds.</p>
+					<hr>
+					<h3>Play</h3>
+					<p>Press the "PLAY" button below to participate in the installation. If all of the devices are being used, please wait a while.</p>
+					<ul class="status"></ul>
+					<hr>
+					<h3>Credit</h3>
+					<p class="small">Artists: Yasuaki Kakehi, Daisuke Akatsuka, Juri Fujii, Yoshimori Yoshikawa, Joung Min Han<br>
+						Special Thanks: Graphic Design: Wataru Date<br>
+						&copy2020 xlab.</p>
+				</div>
+			</div>
+			<div id="instruction" class="page">
+				<h2 class="subtitle">MIC TEST</h2>
+				<div class="main">
+					<p>Make sure the microphone is working and practice blowing on it.</p>
+					<ol>
+						<li>In your browser, please allow this website to use your microphone.</li>
+						<li>Locate the microphone on your device (smartphone, PC, earphones, etc.). If you are not sure, try locating it by following the steps below.</li>
+						<li>Try blowing on the microphone. As long as you are close to the microphone, the website will be able to detect your breath even if you are wearing a mask.</li>
+						<li>If the indicator responds to your breath, you are ready to go!</li>
+					</ol>
+					<ul>
+						<li>It may be difficult to detect your breath if you are in a noisy environment. In this case, please try moving to a quieter place.</li>
+						<li>If the indicator doesn't respond to your breath, it may respond to the sound of your voice.</li>
+					</ul>
+					<button class="btn-short test">Test</button>
+					<div class="mic">
+						<img class="icon" src="img/mic.svg"/>
+						<ul class="indicator">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<p>Blow into your microphone.</p>
+					</div>
+					<a href="#" class="close"></a>
+				</div>
+			</div>
+			<h1 id="logo">Air  on  Air</h1>
+		</div>
+	</body>
 </html>

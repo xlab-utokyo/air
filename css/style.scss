@@ -1,0 +1,366 @@
+@charset "utf-8";
+
+$white: #F7F7F7;
+$black: #222226;
+$blue: #0082C8;
+$mw: 1280px;
+$mh: 800px;
+
+@import url("https://use.typekit.net/irz5cel.css");
+
+html, body {height: 100%;}
+body {
+	background: $black;
+	color: $white;
+	font-size: 18px;
+	-webkit-text-size-adjust: 100%;
+	font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+	line-height: 1.4;
+}
+a {
+	text-decoration: none;
+}
+img {
+	vertical-align: bottom;
+}
+strong {
+	font-weight: 700;
+}
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+}
+
+#wrap {
+	width: 100%;
+	min-width: $mw;
+	
+	#logo {
+		position: fixed;
+		top: 10px;
+		left: 20px;
+		font-weight: 100;
+		font-size: 60px;
+		line-height: 1;
+		letter-spacing: -1px;
+	}
+	.subtitle {
+		position: fixed;
+		top: 68px;
+		left: 20px;
+		font-weight: 700;
+		font-size: 20px;
+	}
+	.page {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-width: $mw;
+		height: 100%;
+		min-height: $mh;
+	}
+	.main {
+		width: calc(100% - 672px);
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.bg {
+		position: fixed;
+	}
+	.btn-short {
+		display: inline-block;
+		padding: 14px 16px 16px;
+		border: solid 2px $white;
+		border-radius: 4px;
+		font-size: 16px;
+		color: $white;
+		transition: all 200ms 0s;
+		
+		&:hover {
+			background: $white;
+			color: $blue;
+		}
+	}
+	.btn-long {
+		display: block;
+		width: 100%;
+		padding: 14px 0 16px;
+		border-radius: 4px;
+		border: solid 2px $white;
+		color: $white;
+		font-size: 16px;
+		text-align: center;
+		transition: all 200ms 0s;
+		
+		&:hover {
+			background: $white;
+			color: $blue;
+		}
+	}
+	.mic {
+		position: absolute;
+		left: calc(50% - 140px);
+		bottom: 16px;
+		width: 280px;
+		text-align: center;
+		
+		.icon {
+			width: 64px;
+			margin-bottom: 16px;
+		}
+		.indicator {
+			width: 240px;
+			height: 20px;
+			display: flex;
+			margin: 0 20px 8px;
+			
+			li {
+				width: 4px;
+				height: 100%;
+				margin: 0 4px;
+				background-color: $white;
+				border-radius: 1px;
+				
+				&.active {
+					background-color: #ff1ad9;
+				}
+				&.inactive {
+					background-color: #12bc00;
+				}
+			}
+		}
+		p {
+			font-weight: 400;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+}
+
+#top {
+	.main {
+		position: relative;
+		padding: 32px 0;
+		
+		.part {
+			padding-top: 20px;
+			border-top: 1px solid $blue;
+		}
+		h3 {
+			font-weight: 100;
+			font-size: 32px;
+			margin-bottom: 8px;
+		}
+		p {
+			margin-bottom: 16px;
+			font-weight: 400;
+		}
+		.howto {
+			margin-bottom: 16px;
+		}
+		.small {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		hr {
+			width: 240px;
+			border: 0px;
+			border-top: 1px solid $white;
+			margin-top: 24px;
+			margin-bottom: 16px;
+		}
+		.status {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+			li {
+				width: calc(100% / 3 - 4px);
+				margin-bottom: 6px;
+				font-weight: 400;
+				font-size: 16px;
+				
+				.btn-long {
+					p {
+						margin: 0;
+						font-size: 12px;
+						text-align: center;
+					}
+					&.off {
+						pointer-events: none;
+						opacity: 0.4;
+					}
+				}
+			}
+		}
+	}
+}
+
+#play {
+	display: none;
+	
+	.video {
+		position: relative;
+		width: calc(100% - 672px);
+		margin: 0 auto;
+		overflow: hidden;
+		
+		#device {
+			position: absolute;
+			border: 1px solid #fff;
+		}
+	}
+	.timer {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		
+		svg {
+			width: 86px;
+			height: 86px;
+		}
+		.second {
+			position: absolute;
+			top: 28px;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font-size: 24px;
+			line-height: 1;
+		}
+	}
+}
+
+#finish {
+	min-height: $mh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	.end {
+		position: relative;
+		text-align: center;
+		
+		.top {
+			margin-top: 24px;
+			font-size: 18px;
+		}
+	}
+}
+
+#instruction {
+	display: none;
+	position: fixed;
+	padding-top: 40px;
+	background: $black;
+	
+	.main {
+		padding-top: 20px;
+		background: $black;
+		border-top: 1px solid $white;
+		
+		h3 {
+			padding-top: 20px;
+			font-size: 24px;
+			border-top: 1px solid $white;
+		}
+		ol {
+			margin: 20px 0;
+			font-size: 18px;
+			counter-reset: no 0;
+			
+			li {
+				margin: 8px 0;
+				
+				&:before {
+					counter-increment: no;
+					content: counter(no) ". ";
+				}
+			}
+		}
+		.small {
+			font-size: 14px;
+		}
+		.close {
+			position: fixed;
+			top: 20px;
+			right: 20px;
+			width: 56px;
+			height: 56px;
+			background: url(../img/close.svg) no-repeat;
+		}
+	}
+}
+
+
+@media screen and (max-width: 748px) {
+	#wrap {
+		min-width: auto;
+		height: auto;
+		
+		#logo {
+			position: absolute;
+		}
+		.subtitle {
+			position: absolute;
+		}
+		.page {
+			min-width: auto;
+			min-height: auto;
+		}
+		.main {
+			position: relative;
+			width: auto;
+			margin: 0 20px;
+			padding: 125px 0 20px;
+			overflow: auto;
+		}
+	}
+	
+	#top {
+		.main {
+			.status {
+				li {
+					width: 100%;
+				}
+			}
+		}
+	}
+	
+	#play {
+		position: fixed !important;
+		
+		.video {
+			width: 100%;
+		}
+		.timer {
+			top: 20px;
+			right: 20px;
+		}
+	}
+	
+	#finish {
+		min-height: auto;
+		
+		.end {
+			margin: 0 20px;
+			text-align: left;
+		}
+	}
+	
+	#instruction {
+		width: 100%;
+		padding-top: 0;
+		
+		.main {
+			position: static;
+			margin-top: 125px;
+			padding-top: 20px;
+		}
+	}
+}
