@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   redirected.searchParams.append("key", device.key);
   redirected.searchParams.append("network", device.network);
   redirected.searchParams.append("roomId", device.room);
+  console.log(device.room)
 //  redirected.searchParams.append("roomId", room);
 
   if (isDevice) {
