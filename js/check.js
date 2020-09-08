@@ -59,7 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const redirected = new URL(file, "https://dadaa.github.io/air-on-air/");
   redirected.searchParams.append("key", device.key);
   redirected.searchParams.append("network", device.network);
-  redirected.searchParams.append("roomId", room);
+  redirected.searchParams.append("roomId", device.room);
+//  redirected.searchParams.append("roomId", room);
 
   if (isDevice) {
     redirected.searchParams.append("cid", device.cid);
