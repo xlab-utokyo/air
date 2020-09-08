@@ -337,7 +337,7 @@ button {
   margin-bottom: 0;
 }
 
-@media screen and (max-width: 748px) {
+@media screen and (max-width: 768px) {
   #wrap {
     min-width: auto;
     height: auto;

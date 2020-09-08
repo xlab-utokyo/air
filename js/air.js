@@ -1,5 +1,5 @@
 (($) => {
-	const TIME = 400, DUR = 30000, MW = 1280, MH = 800, SP = 480, THRESHOLD = 0.1;
+	const TIME = 400, DUR = 30000, MW = 1280, MH = 800, SP = 768, THRESHOLD = 0.1;
 	let W, H, VW, sp = false, pc = true, timer;
 	let currentUser = null, thisUser = null, isAlreadyTested = false, peer, room, roomId, processor, isAlreadyPlayed;
 	
