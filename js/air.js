@@ -90,8 +90,10 @@
 	const checkStatus = () => {
 		const status = $("#top .status li");
 		let n = status.length;
+		console.log(status, n)
 		if (n > 0) {
 			for (let i=0; i<status.length; i++) {
+				console.log(i, status.find("button").hasClass("off"))
 				if (!status.find("button").hasClass("off")) {
 					n = i;
 					break;
@@ -168,7 +170,8 @@
 	
 	const toTop = () => {
 		$("#top").fadeIn(TIME, () => {
-			$("#finish").hide();
+			location.reload();
+//			$("#finish").hide();
 		});
 	}
 	
@@ -176,7 +179,7 @@
 // -----skyway---------------------------------------------
 	
 	async function play() {
-		if (isAlreadyTested) return;
+//		if (isAlreadyTested) return;
 		
 		const stream = await getAudioStream();
 		
@@ -238,6 +241,7 @@
 					tickEls[1][i].classList.add(tickClassName);
 				}
 			}
+			console.log(signal)
 		};
 		mediaStreamSource.connect(processor);
 		processor.connect(audioContext.destination);
@@ -264,7 +268,8 @@
 	
 	async function connect() {
 //		console.log(currentUser)
-		if (!currentUser) {
+//		if (!currentUser) {
+			console.log(roomId)
 			for (var i in DEVICES) {
 				if (roomId == DEVICES[i]["room"]) {
 					peer = await connectPeer(DEVICES[i]["key"]);
@@ -277,7 +282,7 @@
 			room.on("data", onData);
 			room.on("stream", onStream);
 			room.on("peerLeave", onLeave);
-		}
+//		}
 	}
 
 	function connectPeer(key) {
@@ -288,6 +293,7 @@
 	}
 
 	function dispatchToRoom(data) {
+		console.log(data);
 		room.send(data);
 	}
 
