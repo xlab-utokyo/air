@@ -240,7 +240,6 @@
 					tickEls[1][i].classList.add(tickClassName);
 				}
 			}
-			console.log(signal)
 		};
 		mediaStreamSource.connect(processor);
 		processor.connect(audioContext.destination);
@@ -268,7 +267,6 @@
 	async function connect() {
 //		console.log(currentUser)
 //		if (!currentUser) {
-			console.log(roomId)
 			for (var i in DEVICES) {
 				if (roomId == DEVICES[i]["room"]) {
 					peer = await connectPeer(DEVICES[i]["key"]);
@@ -292,7 +290,6 @@
 	}
 
 	function dispatchToRoom(data) {
-		console.log(data);
 		room.send(data);
 	}
 
