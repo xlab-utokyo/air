@@ -4,16 +4,19 @@
 	let currentUser = null, thisUser = null, isAlreadyTested = false, peer, room, roomId, processor, isAlreadyPlayed;
 	
 	$(() => {
-		if (navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0) {
+		var ua = navigator.userAgent;
+		if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) || ua.indexOf('Windows Phone') > 0) {
 			pc = false;
 			$("video.bg").remove();
-		} else if (navigator.userAgent.indexOf('iPad') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+		} else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
 			pc = false;
 			$("video.bg").remove();
 		} else {
 			$("img.bg").remove();
-			$("#wrap .bg")[0].play();
+//			$("#wrap .bg")[0].play();
 		}
+		$("#wrap .bg").show();
+		console.log(1);
 		setSize();
 		$(window).on("orientationchange resize", setSize);
 		$(window).on("scroll", () => {
@@ -231,8 +234,13 @@
 			});
 			return stream;
 		} catch (e) {
-			console.error(e);
-			alert(`${ e.name }: please reload`);
+			const error = e.toString();
+			if (error.indexOf("undefined") > -1 && error.indexOf("navigator.mediaDevices.getUserMedia") > -1) {
+				alert("This browser is not supported.");
+			} else {
+				console.error(e);
+				alert('${ e.name }: please reload');
+			}
 			return null;
 		}
 	}

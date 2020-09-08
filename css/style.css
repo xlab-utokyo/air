@@ -79,9 +79,8 @@ button {
   overflow: hidden;
 }
 #wrap .bg {
+  display: none;
   position: fixed;
-  background: url("img/air.png") no-repeat;
-  background-size: cover;
 }
 #wrap hr {
   width: 240px;
