@@ -1,42 +1,42 @@
 const DEVICES = {
   "linz-1": {
     label: "LINZ 1",
-    room: "linz-1",
+    room: "linz-1-production",
     network: "sfu",
     key: "1143d56c-70c8-4ec7-86f7-2686add63e3e",
     cid: "52c30248-e069-11ea-87d0-0242ac130003",
   },
   "linz-2": {
     label: "LINZ 2",
-    room: "linz-2",
+    room: "linz-2-production",
     network: "sfu",
     key: "1143d56c-70c8-4ec7-86f7-2686add63e3e",
     cid: "52c3048c-e069-11ea-87d0-0242ac130003",
   },
   "linz-3": {
     label: "LINZ 3",
-    room: "linz-3",
+    room: "linz-3-production",
     network: "sfu",
     key: "1143d56c-70c8-4ec7-86f7-2686add63e3e",
     cid: "52c305e0-e069-11ea-87d0-0242ac130003",
   },
   "tokyo-1": {
     label: "TOKYO 1",
-    room: "tokyo-1",
+    room: "tokyo-1-production",
     network: "sfu",
     key: "1143d56c-70c8-4ec7-86f7-2686add63e3e",
     cid: "9f7ea436-e6a7-11ea-adc1-0242ac120002",
   },
   "tokyo-2": {
     label: "TOKYO 2",
-    room: "tokyo-2",
+    room: "tokyo-2-production",
     network: "sfu",
     key: "1143d56c-70c8-4ec7-86f7-2686add63e3e",
     cid: "9f7ea68e-e6a7-11ea-adc1-0242ac120002",
   },
   "tokyo-3": {
     label: "TOKYO 3",
-    room: "tokyo-3",
+    room: "tokyo-3-production",
     network: "sfu",
     key: "1143d56c-70c8-4ec7-86f7-2686add63e3e",
     cid: "9f7ea8aa-e6a7-11ea-adc1-0242ac120002",
@@ -60,8 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   redirected.searchParams.append("key", device.key);
   redirected.searchParams.append("network", device.network);
   redirected.searchParams.append("roomId", device.room);
-  console.log(device.room)
-//  redirected.searchParams.append("roomId", room);
 
   if (isDevice) {
     redirected.searchParams.append("cid", device.cid);
