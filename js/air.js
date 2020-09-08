@@ -16,7 +16,7 @@
 //			$("#wrap .bg")[0].play();
 		}
 		$("#wrap .bg").show();
-		checkStatus();
+		setInterval(checkStatus, 1000);
 		setSize();
 		$(window).on("orientationchange resize", setSize);
 		$(window).on("scroll", () => {
@@ -89,20 +89,19 @@
 	
 	const checkStatus = () => {
 		const status = $("#top .status li");
-		let n = status.length;
-		console.log(status, n)
-		if (n > 0) {
+		if (status.length == 6) {
+			let n = status.length;
 			for (let i=0; i<status.length; i++) {
-				console.log(i, status.find("button").hasClass("off"))
-				if (!status.find("button").hasClass("off")) {
+				if (status.eq(i).find("button p").text() != "CLOSED") {
 					n = i;
 					break;
 				}
 			}
-			if (n == status.length) $(".closing").show();
-			cancelAnimationFrame(statusID);
-		} else {
-			statusID = requestAnimationFrame(checkStatus);
+			if (n == status.length) {
+				$(".closing").show();
+			} else {
+				$(".closing").hide();
+			}
 		}
 	}
 	
