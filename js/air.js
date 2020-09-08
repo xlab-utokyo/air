@@ -1,6 +1,6 @@
 (($) => {
 	const TIME = 400, DUR = 30000, MW = 1280, MH = 800, SP = 768, THRESHOLD = 0.1;
-	let W, H, VW, sp = false, pc = true, timer;
+	let W, H, VW, sp = false, pc = true, statusID, timer;
 	let currentUser = null, thisUser = null, isAlreadyTested = false, peer, room, roomId, processor, isAlreadyPlayed;
 	
 	$(() => {
@@ -16,6 +16,7 @@
 //			$("#wrap .bg")[0].play();
 		}
 		$("#wrap .bg").show();
+		checkStatus();
 		setSize();
 		$(window).on("orientationchange resize", setSize);
 		$(window).on("scroll", () => {
@@ -85,6 +86,23 @@
 			$("#policy").fadeOut(TIME);
 		});
 	});
+	
+	const checkStatus = () => {
+		const status = $("#top .status li");
+		let n = status.length;
+		if (n > 0) {
+			for (let i=0; i<status.length; i++) {
+				if (!status.find("button").hasClass("off")) {
+					n = i;
+					break;
+				}
+			}
+			if (n == status.length) $(".closing").show();
+			cancelAnimationFrame(statusID);
+		} else {
+			statusID = requestAnimationFrame(checkStatus);
+		}
+	}
 	
 	const setSize = () => {
 		if (window.innerWidth <= SP) sp = true;

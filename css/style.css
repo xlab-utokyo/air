@@ -82,6 +82,9 @@ button {
   display: none;
   position: fixed;
 }
+#wrap .closing {
+  display: none;
+}
 #wrap hr {
   width: 240px;
   border: 0px;
