@@ -15,6 +15,14 @@
 			$("img.bg").remove();
 //			$("#wrap .bg")[0].play();
 		}
+		
+		const cookies = document.cookie.split(';');
+		for(var c of cookies){
+			if (c == "optout=true") {
+				$("#analytics").remove();
+			}
+		}
+
 		$("#wrap .bg").show();
 		setInterval(checkStatus, 1000);
 		setSize();
@@ -84,6 +92,16 @@
 			e.preventDefault();
 			$("#top").show();
 			$("#policy").fadeOut(TIME);
+		});
+		
+		$("#analytics .yes").on("click", () => {
+			document.cookie = "optout=true";
+			$("#analytics").remove();
+		});
+		
+		$("#analytics .no").on("click", () => {
+			window['ga-disable-UA-177536995-1)'] = true;
+			$("#analytics").remove();
 		});
 	});
 	
@@ -240,6 +258,7 @@
 					tickEls[1][i].classList.add(tickClassName);
 				}
 			}
+//			console.log("rms ", rms)
 		};
 		mediaStreamSource.connect(processor);
 		processor.connect(audioContext.destination);
@@ -312,6 +331,13 @@
 
 		if (peer.id === data.currentUser) {
 			isAlreadyPlayed = true;
+		}
+		if (data.currentUser != null && peer.id != data.currentUser) {
+			alert("Sorry, this room is busy.");
+			room.close();
+			$("#top").fadeIn(TIME, () => {
+				location.reload();
+			});
 		}
 		currentUser = data.currentUser;
 		thisUser = peer.id;

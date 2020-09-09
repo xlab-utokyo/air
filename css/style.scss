@@ -43,6 +43,19 @@ button {
 	appearance: none;
 	color: $white;
 }
+.btn-short {
+	display: inline-block;
+	padding: 14px 16px 16px;
+	border: solid 2px $white;
+	border-radius: 4px;
+	font-size: 16px;
+	transition: all 200ms 0s;
+	
+	&:hover {
+		background: $white;
+		color: $blue;
+	}
+}
 
 #wrap {
 	width: 100%;
@@ -106,19 +119,6 @@ button {
 			text-indent: -1.1em;
 			padding-left: 1.1em;
 			margin-bottom: 8px;
-		}
-	}
-	.btn-short {
-		display: inline-block;
-		padding: 14px 16px 16px;
-		border: solid 2px $white;
-		border-radius: 4px;
-		font-size: 16px;
-		transition: all 200ms 0s;
-		
-		&:hover {
-			background: $white;
-			color: $blue;
 		}
 	}
 	.btn-long {
@@ -249,7 +249,6 @@ button {
 		
 		#device {
 			position: absolute;
-			border: 1px solid #fff;
 			transform: rotate(180deg);
 		}
 	}
@@ -372,6 +371,28 @@ button {
 	}
 }
 
+#analytics {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	width: 200px;
+	padding: 10px;
+	background: rgba(247, 247, 247, 0.9);
+	color: $black;
+	font-size: 12px;
+	
+	.btn-short {
+		padding: 6px 8px 8px;
+		border: solid 2px $blue;
+		color: $blue;
+		font-size: 12px;
+		
+		&:hover {
+			background: $blue;
+			color: $white;
+		}
+	}
+}
 
 @media screen and (max-width: 768px) {
 	#wrap {
@@ -457,5 +478,10 @@ button {
 			margin-top: 125px;
 			padding-top: 20px;
 		}
+	}
+	#analytics {
+		left: 0;
+		bottom: 0;
+		width: 100%;
 	}
 }

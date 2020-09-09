@@ -43,6 +43,19 @@ button {
   color: #F7F7F7;
 }
 
+.btn-short {
+  display: inline-block;
+  padding: 14px 16px 16px;
+  border: solid 2px #F7F7F7;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 200ms 0s;
+}
+.btn-short:hover {
+  background: #F7F7F7;
+  color: #0082C8;
+}
+
 #wrap {
   width: 100%;
   min-width: 1280px;
@@ -104,18 +117,6 @@ button {
   text-indent: -1.1em;
   padding-left: 1.1em;
   margin-bottom: 8px;
-}
-#wrap .btn-short {
-  display: inline-block;
-  padding: 14px 16px 16px;
-  border: solid 2px #F7F7F7;
-  border-radius: 4px;
-  font-size: 16px;
-  transition: all 200ms 0s;
-}
-#wrap .btn-short:hover {
-  background: #F7F7F7;
-  color: #0082C8;
 }
 #wrap .btn-long {
   display: block;
@@ -232,7 +233,6 @@ button {
 }
 #play .video #device {
   position: absolute;
-  border: 1px solid #fff;
   transform: rotate(180deg);
 }
 #play .timer {
@@ -340,6 +340,27 @@ button {
   margin-bottom: 0;
 }
 
+#analytics {
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  width: 200px;
+  padding: 10px;
+  background: rgba(247, 247, 247, 0.9);
+  color: #222226;
+  font-size: 12px;
+}
+#analytics .btn-short {
+  padding: 6px 8px 8px;
+  border: solid 2px #0082C8;
+  color: #0082C8;
+  font-size: 12px;
+}
+#analytics .btn-short:hover {
+  background: #0082C8;
+  color: #F7F7F7;
+}
+
 @media screen and (max-width: 768px) {
   #wrap {
     min-width: auto;
@@ -412,5 +433,11 @@ button {
     position: static;
     margin-top: 125px;
     padding-top: 20px;
+  }
+
+  #analytics {
+    left: 0;
+    bottom: 0;
+    width: 100%;
   }
 }

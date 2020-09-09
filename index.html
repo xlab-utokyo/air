@@ -25,7 +25,15 @@
 		<script src="js/device-list.js" type="text/javascript"></script>
 		<script src="js/air.js" type="text/javascript"></script>
 	</head>
-
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177536995-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-177536995-1');
+	</script>
+	
 	<body>
 		<div id="wrap">
 			<div id="play" class="page">
@@ -187,6 +195,11 @@
 				<h2 class="subtitle">PRIVACY POLICY</h2>
 			</div>
 			<h1 id="logo">Air  on  Air</h1>
+		</div>
+		<div id="analytics">
+			<p>You can opt-out from Google Analytics tracking by clicking on this link.</p>
+			<button class="yes btn-short">accept</button>
+			<button class="no btn-short">opt-out</button>
 		</div>
 	</body>
 </html>
