@@ -36,7 +36,7 @@ class DeviceList {
     }
 
     for (const [id, { room, key, network }] of Object.entries(DEVICES)) {
-//	  console.log(id, statuses[id])
+	  console.log(id, statuses[id])
       if (statuses[id] === false) {
         // unavailable.
         continue;
