@@ -1,0 +1,174 @@
+@charset "UTF-8";
+/*reset*/
+@import url("https://use.typekit.net/irz5cel.css");
+body, section, header, footer, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, hr, figure, iframe, figcaption {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  letter-spacing: 0.5px;
+  font-feature-settings: "pkna";
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+.bg {
+  position: fixed;
+}
+
+hr.hr-shortline {
+  width: 240px;
+  border: 0px;
+  border-top: 1px solid #F7F7F7;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+hr.hr-vshortline {
+  width: 120px;
+  border: 0px;
+  border-top: 1px solid #F7F7F7;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#container {
+  color: #F7F7F7;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+section#title-block {
+  position: relative;
+  top: 20px;
+  left: 2%;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 1025px) {
+  section#title-block {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+#aoa-title {
+  font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-weight: 100;
+  font-size: 60px;
+  line-height: 1;
+  color: #F7F7F7;
+  letter-spacing: -1px;
+}
+
+.aoa-subtitle {
+  font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #F7F7F7;
+  text-transform: uppercase;
+}
+
+#content-block {
+  position: relative;
+  margin: 0 auto;
+  width: 96%;
+  margin-top: 20vh;
+}
+
+@media screen and (min-width: 1025px) {
+  #content-block {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 25vh;
+  }
+}
+
+.paragraph-title {
+  font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-weight: 100;
+  font-size: 32px;
+  line-height: 1;
+  color: #F7F7F7;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 1025px) {
+  .paragraph-title {
+    font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 1.4;
+    color: #F7F7F7;
+  }
+}
+
+.default-text {
+  font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #F7F7F7;
+}
+
+.small-text {
+  font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #F7F7F7;
+}
+
+a.text-link {
+  color: #F7F7F7;
+  text-decoration: underline;
+}
+
+a.text-link:hover {
+  text-decoration: none;
+}
