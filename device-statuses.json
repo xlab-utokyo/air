@@ -2,7 +2,7 @@
   "linz-1": true,
   "linz-2": false,
   "linz-3": false,
-  "tokyo-1": false,
-  "tokyo-2": false,
-  "tokyo-3": false
+  "tokyo-1": true,
+  "tokyo-2": true,
+  "tokyo-3": true
 }
