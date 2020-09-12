@@ -29,16 +29,16 @@ const DEVICES = {
   },
   "tokyo-2": {
     label: "TOKYO 2",
-    room: "tokyo-2-production",
+    room: "tokyo-2-production-2",
     network: "sfu",
-    key: "1c7565a2-83f7-4446-bcae-775d125dff5e",
+    key: "0c58b2e1-96e1-47c5-82f7-cc6a7419600a",
     cid: "9f7ea68e-e6a7-11ea-adc1-0242ac120002",
   },
   "tokyo-3": {
     label: "TOKYO 3",
-    room: "tokyo-3-production",
+    room: "tokyo-3-production-2",
     network: "sfu",
-    key: "fb6b2cc7-51f2-4d93-b3b0-cd905606e71c",
+    key: "6e465825-3b1c-4070-a0be-9b3987f8481c",
     cid: "9f7ea8aa-e6a7-11ea-adc1-0242ac120002",
   },
 };
