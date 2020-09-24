@@ -29,7 +29,7 @@ class DeviceList {
   async start() {
     let statuses = {};
     try {
-      const response = await fetch("https://xlab-utokyo.github.io/air/device-statuses.json");
+      const response = await fetch("/xlab-utokyo/air/blob/gh-pages/device-statuses.json");
       statuses = await response.json();
     } catch (e) {
       console.error(e);
