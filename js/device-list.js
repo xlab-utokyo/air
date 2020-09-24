@@ -29,7 +29,7 @@ class DeviceList {
   async start() {
     let statuses = {};
     try {
-      const response = await fetch("device-statuses.json");
+      const response = await fetch("/air/device-statuses.json");
       statuses = await response.json();
     } catch (e) {
       console.error(e);
