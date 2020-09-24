@@ -64,11 +64,19 @@ button {
   position: fixed;
   top: 10px;
   left: 20px;
-  font-weight: 100;
-  font-size: 60px;
   line-height: 1;
-  letter-spacing: -1px;
   pointer-events: none;
+}
+#wrap #logo h1 {
+  margin-bottom: 28px;
+  font-size: 60px;
+  font-weight: 100;
+  letter-spacing: -1px;
+}
+#wrap #logo a {
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: auto;
 }
 #wrap .subtitle {
   position: fixed;
@@ -97,6 +105,9 @@ button {
 }
 #wrap .closing {
   display: none;
+}
+#wrap .middle {
+  font-size: 16px;
 }
 #wrap hr {
   width: 240px;
@@ -344,7 +355,7 @@ button {
   position: fixed;
   left: 10px;
   bottom: 10px;
-  width: 200px;
+  width: 220px;
   padding: 10px;
   background: rgba(247, 247, 247, 0.9);
   color: #222226;
