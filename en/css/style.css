@@ -396,6 +396,9 @@ button {
   #top .main .status li {
     width: 100%;
   }
+  #top #lang {
+    position: absolute;
+  }
 
   #play {
     position: fixed !important;
