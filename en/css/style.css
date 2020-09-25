@@ -65,18 +65,10 @@ button {
   top: 10px;
   left: 20px;
   line-height: 1;
-  pointer-events: none;
-}
-#wrap #logo h1 {
-  margin-bottom: 28px;
   font-size: 60px;
   font-weight: 100;
   letter-spacing: -1px;
-}
-#wrap #logo a {
-  font-weight: 700;
-  text-decoration: none;
-  pointer-events: auto;
+  pointer-events: none;
 }
 #wrap .subtitle {
   position: fixed;
@@ -228,6 +220,15 @@ button {
 #top .main .status li .btn-long.off {
   pointer-events: none;
   opacity: 0.4;
+}
+#top #lang {
+  position: fixed;
+  top: 78px;
+  left: 20px;
+  line-height: 1;
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: auto;
 }
 
 #play {
