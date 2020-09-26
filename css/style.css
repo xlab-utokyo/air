@@ -62,7 +62,7 @@ button {
 }
 #wrap #logo {
   position: fixed;
-  top: 10px;
+  top: 20px;
   left: 20px;
   line-height: 1;
   font-size: 60px;
@@ -76,6 +76,7 @@ button {
   left: 20px;
   font-weight: 700;
   font-size: 20px;
+  line-height: 1.4;
 }
 #wrap .page {
   position: absolute;
@@ -97,9 +98,6 @@ button {
 }
 #wrap .closing {
   display: none;
-}
-#wrap .middle {
-  font-size: 16px;
 }
 #wrap hr {
   width: 240px;
@@ -185,7 +183,21 @@ button {
 #top .main h3 {
   font-weight: 100;
   font-size: 32px;
-  margin-bottom: 8px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+#top .main h3 .break-br {
+  display: none;
+}
+#top .main h3 .jp-title {
+  font-weight: 100;
+  font-size: 20px;
+  line-height: 1.8;
+}
+#top .main p {
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: justify;
 }
 #top .main strong {
   letter-spacing: 0.1px;
@@ -228,8 +240,9 @@ button {
   position: fixed;
   top: 78px;
   left: 20px;
-  line-height: 1;
+  line-height: 1.4;
   font-weight: 700;
+  font-size: 20px;
   text-decoration: none;
   pointer-events: auto;
 }
@@ -396,6 +409,12 @@ button {
     overflow: auto;
   }
 
+  #top .main h3 .break-br {
+    display: inline;
+  }
+  #top .main h3 .title-border {
+    display: none;
+  }
   #top .main .status li {
     width: 100%;
   }
