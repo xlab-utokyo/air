@@ -153,7 +153,7 @@
 	}
 	
 	const scrollFixed = () => {
-		$("#logo, .subtitle").css("left", -$(window).scrollLeft() + 20);
+		$("#logo, .subtitle, #lang").css("left", -$(window).scrollLeft() + 20);
 		$("#instruction .mic").css("left", -$(window).scrollLeft() + (W/2 - 140));
 		$(".close").css("left", -$(window).scrollLeft() + (W - 76));
 	}

@@ -62,7 +62,7 @@ button {
 }
 #wrap #logo {
   position: fixed;
-  top: 20px;
+  top: 10px;
   left: 20px;
   line-height: 1;
   font-size: 60px;
@@ -223,7 +223,7 @@ button {
 }
 #top #lang {
   position: fixed;
-  top: 78px;
+  top: 68px;
   left: 20px;
   line-height: 1;
   font-weight: 700;

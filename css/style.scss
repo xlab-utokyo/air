@@ -63,7 +63,7 @@ button {
 	
 	#logo {
 		position: fixed;
-		top: 20px;
+		top: 10px;
 		left: 20px;
 		line-height: 1;
 		font-size: 60px;
@@ -205,12 +205,15 @@ button {
 			}
 		}
 		p {
-			font-weight: 400;
 			line-height: 1.8;
 			text-align: justify;
 		}
 		strong {
 			letter-spacing: 0.1px;
+			
+			&+ p {
+				margin-top: 4px;
+			}
 		}
 		.howto {
 			margin-bottom: 16px;
@@ -226,6 +229,9 @@ button {
 		.small {
 			font-size: 14px;
 			line-height: 1.5;
+		}
+		p + .small {
+			margin-top: -16px;
 		}
 		.status {
 			display: flex;
@@ -254,7 +260,7 @@ button {
 	}
 	#lang {
 		position: fixed;
-		top: 78px;
+		top: 68px;
 		left: 20px;
 		line-height: 1.4;
 		font-weight: 700;
@@ -334,6 +340,8 @@ button {
 			list-style-type: decimal;
 			
 			li {
+				line-height: 1.8;
+				text-align: justify;
 				list-style-type: decimal;
 				list-style-position: inside;
 				text-indent: -1.1em;
@@ -343,6 +351,8 @@ button {
 		}
 		.asterisk {
 			li {
+				line-height: 1.8;
+				text-align: justify;
 				list-style-position: inside;
 				text-indent: -0.7em;
 				padding-left: 0.7em;
