@@ -1,19 +1,19 @@
 const DEVICES = {
-  "yokohama-1": {
+  "linz-1": {
     label: "LINZ 1",
     room: "linz-1",
     network: "sfu",
     key: "42d2a8f3-ed64-48af-8928-902bd4e4f5bc",
     cid: "52c30248-e069-11ea-87d0-0242ac130003",
   },
-  "yokohama-2": {
+  "linz-2": {
     label: "LINZ 2",
     room: "linz-2",
     network: "sfu",
     key: "4bf93d11-4e49-40a4-8a25-f33c033cf1fe",
     cid: "52c3048c-e069-11ea-87d0-0242ac130003",
   },
-  "yokohama-3": {
+  "linz-3": {
     label: "LINZ 3",
     room: "linz-3",
     network: "sfu",
