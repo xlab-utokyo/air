@@ -207,7 +207,7 @@ button {
   justify-content: space-between;
 }
 #top .main .status li {
-  width: calc(100% / 3 - 4px);
+  width: calc(100% / 2 - 4px);
   margin-bottom: 6px;
   font-weight: 400;
   font-size: 16px;
