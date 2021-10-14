@@ -396,13 +396,22 @@ button {
 		padding: 20px 0;
 		border-top: 1px solid $white;
 		
-		h3, p {
+		h3, p, ul {
 			margin-bottom: 24px;
 		}
-		ol {
+		ul {
 			li {
-				margin-bottom: 0;
+				margin: 0 0 0 24px;
+				padding-left: 1em;
+				text-indent: -0.6em;
+				
+				&::before {
+					content: '- ';
+				}
 			}
+		}
+		.bold {
+			font-weight: 700;
 		}
 	}
 }
