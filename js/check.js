@@ -2,14 +2,14 @@ const DEVICES = {
   "tokyo-1": {
     label: "TOKYO 1",
     room: "tokyo-1",
-    network: "sfu",
+    network: "mesh",
     key: "42d2a8f3-ed64-48af-8928-902bd4e4f5bc",
     cid: "52c30248-e069-11ea-87d0-0242ac130003",
   },
   "tokyo-2": {
     label: "TOKYO 2",
     room: "tokyo-2",
-    network: "sfu",
+    network: "mesh",
     key: "4bf93d11-4e49-40a4-8a25-f33c033cf1fe",
     cid: "52c3048c-e069-11ea-87d0-0242ac130003",
   }
