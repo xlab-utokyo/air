@@ -10,7 +10,7 @@ const DEVICES = {
     label: "TOKYO 2",
     room: "tokyo-mesh-2",
     network: "mesh",
-    key: "4bf93d11-4e49-40a4-8a25-f33c033cf1fe",
+    key: "f061f8cb-d48f-49b4-8fa7-691e7ec19b48",
     cid: "52c3048c-e069-11ea-87d0-0242ac130003",
   }
  };
