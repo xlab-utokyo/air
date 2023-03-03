@@ -11,7 +11,7 @@ const DEVICES = {
     room: "tokyo-mesh-2",
     network: "mesh",
     key: "f061f8cb-d48f-49b4-8fa7-691e7ec19b48",
-    cid: "52c3048c-e069-11ea-87d0-0242ac130003",
+    cid: "9f7ea436-e6a7-11ea-adc1-0242ac120002",
   }
  };
 
