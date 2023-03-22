@@ -1,0 +1,543 @@
+@charset "utf-8";
+
+$white: #F7F7F7;
+$black: #222226;
+$blue: #0082C8;
+$mw: 1280px;
+$mh: 800px;
+
+@import url("https://use.typekit.net/irz5cel.css");
+
+html, body {height: 100%;}
+body {
+	background: $black;
+	color: $white;
+	font-size: 18px;
+	-webkit-text-size-adjust: 100%;
+	font-family: 'acumin-pro', Helvetica, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
+	line-height: 1.4;
+}
+a {
+	color: $white;
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+img {
+	vertical-align: bottom;
+}
+p {
+	margin-bottom: 16px;
+	font-weight: 400;
+}
+strong {
+	font-weight: 700;
+}
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	color: $white;
+}
+.btn-short {
+	display: inline-block;
+	padding: 14px 16px 16px;
+	border: solid 2px $white;
+	border-radius: 4px;
+	font-size: 16px;
+	transition: all 200ms 0s;
+	
+	&:hover {
+		background: $white;
+		color: $blue;
+	}
+}
+
+#wrap {
+	width: 100%;
+	min-width: $mw;
+	
+	#logo {
+		position: fixed;
+		top: 10px;
+		left: 20px;
+		line-height: 1;
+		font-size: 60px;
+		font-weight: 100;
+		letter-spacing: -1px;
+		pointer-events: none;
+	}
+	.subtitle {
+		position: fixed;
+		top: 68px;
+		left: 20px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 1.4;
+	}
+	.page {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-width: $mw;
+		height: 100%;
+		min-height: $mh;
+	}
+	.main {
+		width: calc(100% - 672px);
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.bg {
+		display: none;
+		position: fixed;
+	}
+	.closing {
+		display: none;
+	}
+	hr {
+		width: 240px;
+		border: 0px;
+		border-top: 1px solid $white;
+		margin: 24px 0 16px;
+		
+		&.short {
+			width: 120px;
+			margin: 12px 0;
+		}
+	}
+	ol {
+		list-style-type: decimal;
+		
+		li {
+			list-style-type: decimal;
+			list-style-position: inside;
+			text-indent: -1.1em;
+			padding-left: 1.1em;
+			margin-bottom: 8px;
+		}
+	}
+	.btn-long {
+		display: block;
+		width: 100%;
+		padding: 14px 0 16px;
+		border-radius: 4px;
+		border: solid 2px $white;
+		font-size: 16px;
+		text-align: center;
+		transition: all 200ms 0s;
+		
+		&:hover {
+			background: $white;
+			color: $blue;
+		}
+	}
+	.close {
+		position: fixed;
+		top: 20px;
+		left: calc(100% - 76px);
+		width: 56px;
+		height: 56px;
+		background: url(../img/close.svg) no-repeat;
+	}
+	.mic {
+		position: absolute;
+		left: calc(50% - 140px);
+		bottom: 16px;
+		width: 280px;
+		text-align: center;
+		
+		.icon {
+			width: 64px;
+			margin-bottom: 16px;
+		}
+		.indicator {
+			width: 240px;
+			height: 20px;
+			display: flex;
+			margin: 0 20px 8px;
+			
+			li {
+				width: 4px;
+				height: 100%;
+				margin: 0 4px;
+				background-color: $white;
+				border-radius: 1px;
+				
+				&.active {
+					background-color: #ff1ad9;
+				}
+				&.inactive {
+					background-color: #12bc00;
+				}
+			}
+		}
+		p {
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+}
+
+#top {
+	.main {
+		position: relative;
+		padding: 32px 0;
+		
+		h3 {
+			font-weight: 100;
+			font-size: 32px;
+			line-height: 1;
+			margin-bottom: 12px;
+			
+			.break-br {
+				display: none;
+			}
+			.jp-title {
+				font-weight: 100;
+				font-size: 20px;
+				line-height: 1.8;
+			}
+		}
+		p {
+			line-height: 1.8;
+			text-align: justify;
+		}
+		strong {
+			letter-spacing: 0.1px;
+			
+			&+ p {
+				margin-top: 4px;
+			}
+		}
+		.howto {
+			margin-bottom: 16px;
+		}
+		.policy {
+			font-size: 1em;
+			text-decoration: underline;
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		.small {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		p + .small {
+			margin-top: -16px;
+		}
+		.status {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			
+			li {
+				width: calc(100% / 2 - 4px);
+				margin-bottom: 6px;
+				font-weight: 400;
+				font-size: 16px;
+				
+				.btn-long {
+					p {
+						margin: 0;
+						font-size: 12px;
+						text-align: center;
+					}
+					&.off {
+						pointer-events: none;
+						opacity: 0.4;
+					}
+				}
+			}
+		}
+	}
+	#lang {
+		position: fixed;
+		top: 68px;
+		left: 20px;
+		line-height: 1.4;
+		font-weight: 700;
+		font-size: 20px;
+		text-decoration: none;
+		pointer-events: auto;
+	}
+}
+
+#play {
+	display: none;
+	
+	.video {
+		position: relative;
+		width: calc(100% - 672px);
+		margin: 0 auto;
+		overflow: hidden;
+		
+		#device {
+			position: absolute;
+			transform: rotate(180deg);
+		}
+	}
+	.timer {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		
+		svg {
+			width: 86px;
+			height: 86px;
+		}
+		.second {
+			position: absolute;
+			top: 28px;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			font-size: 24px;
+			line-height: 1;
+		}
+	}
+}
+
+#finish {
+	min-height: $mh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	.end {
+		position: relative;
+		text-align: center;
+		
+		.top {
+			margin-top: 8px;
+			font-size: 18px;
+		}
+	}
+}
+
+#instruction {
+	display: none;
+	position: fixed;
+	padding-top: 40px;
+	background: $black;
+	
+	.main {
+		position: relative;
+		padding: 20px 0 176px;
+		border-top: 1px solid $white;
+		
+		img {
+			margin: 30px 0;
+		}
+		ol {
+			list-style-type: decimal;
+			
+			li {
+				line-height: 1.8;
+				text-align: justify;
+				list-style-type: decimal;
+				list-style-position: inside;
+				text-indent: -1.1em;
+				padding-left: 1.1em;
+				margin-bottom: 8px;
+			}
+		}
+		.asterisk {
+			li {
+				line-height: 1.8;
+				text-align: justify;
+				list-style-position: inside;
+				text-indent: -0.7em;
+				padding-left: 0.7em;
+				margin-bottom: 8px;
+				
+				&:before {
+					content: "* ";
+				}
+			}
+		}
+		.test {
+			margin: 16px 0 8px;
+		}
+		.small {
+			font-size: 14px;
+		}
+		.mic-bg {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			min-width: $mw;
+			height: 176px;
+			background: linear-gradient(180deg, rgba(34, 34, 38, 0) 0%, rgba(34, 34, 38, 0.8) 15%);
+		}
+		.mic {
+			position: fixed;
+			left: calc(50% - 140px);
+		}
+	}
+}
+
+#policy {
+	display: none;
+	position: fixed;
+	padding-top: 40px;
+	background: $black;
+	
+	.main {
+		position: relative;
+		padding: 20px 0;
+		border-top: 1px solid $white;
+		
+		h3, p, ul {
+			margin-bottom: 24px;
+		}
+		ul {
+			li {
+				margin: 0 0 0 24px;
+				padding-left: 1em;
+				text-indent: -0.6em;
+				
+				&::before {
+					content: '- ';
+				}
+			}
+		}
+		.bold {
+			font-weight: 700;
+		}
+	}
+}
+
+#analytics {
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	width: 220px;
+	padding: 10px;
+	background: rgba(247, 247, 247, 0.9);
+	color: $black;
+	font-size: 12px;
+	
+	.btn-short {
+		padding: 6px 8px 8px;
+		border: solid 2px $blue;
+		color: $blue;
+		font-size: 12px;
+		
+		&:hover {
+			background: $blue;
+			color: $white;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#wrap {
+		min-width: auto;
+		height: auto;
+		
+		#logo {
+			position: absolute;
+		}
+		.subtitle {
+			position: absolute;
+		}
+		.page {
+			min-width: auto;
+			min-height: auto;
+		}
+		.main {
+			position: relative;
+			width: auto;
+			margin: 0 20px;
+			padding: 125px 0 20px;
+			overflow: auto;
+		}
+	}
+	
+	#top {
+		.main {
+			h3 {
+				.break-br {
+					display: inline;
+				}
+				.title-border {
+					display: none;
+				}
+			}
+			.status {
+				li {
+					width: 100%;
+				}
+			}
+		}
+		#lang {
+			position: absolute;
+		}
+	}
+	
+	#play {
+		position: fixed !important;
+		
+		.video {
+			width: 100%;
+		}
+		.timer {
+			top: 20px;
+			right: 20px;
+		}
+	}
+	
+	#finish {
+		min-height: auto;
+		
+		.end {
+			margin: 0 20px;
+			text-align: left;
+		}
+	}
+	
+	#instruction {
+		width: 100%;
+		padding-top: 0;
+		
+		.main {
+			position: static;
+			margin-top: 125px;
+			padding: 20px 0 176px;
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+			.mic {
+				position: fixed;
+				left: calc(50% - 140px);
+			}
+		}
+	}
+		
+	#policy {
+		width: 100%;
+		padding-top: 0;
+		
+		.main {
+			position: static;
+			margin-top: 125px;
+			padding-top: 20px;
+		}
+	}
+	#analytics {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+	}
+}

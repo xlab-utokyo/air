@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="description" content="Air on Airは、インターネットを介して息を届け、遠くの空にシャボン玉を飛ばすオンライン参加型のインスタレーションです。">
+		<meta name="keywords" content="Air on Air">
+		
+		<meta property="og:title" content="Air on Air | Blow bubbles to another sky.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://xlab-utokyo.github.io/air/">
+		<meta property="og:image" content="https://xlab-utokyo.github.io/air/img/ogp.png">
+		<meta property="og:image:alt" content="Air on Air">
+		<meta property="og:site_name" content="Air on Air">
+		<meta property="og:description" content="Air on Airは、インターネットを介して息を届け、遠くの空にシャボン玉を飛ばすオンライン参加型のインスタレーションです。">
+		<meta property="og:locale" content="ja_JP">
+		<title>Air on Air</title>
+		
+		<link rel="stylesheet" href="css/reset.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		
+		<script src="js/check.js" type="text/javascript"></script>
+		<script src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js" type="text/javascript"></script>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/jquery.easing.js" type="text/javascript"></script>
+		<script src="js/jquery.drawsvg.js" type="text/javascript"></script>
+		<script src="js/device-list.js" type="text/javascript"></script>
+		<script src="js/air.js" type="text/javascript"></script>
+	</head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177536995-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-177536995-1');
+	</script>
+	
+	<body>
+		<div id="wrap">
+			<div id="play" class="page">
+				<div class="video">
+					<video id="device"></video>
+				</div>
+				<div class="timer">
+					<svg>
+						<path fill="none" stroke="#F7F7F7" stroke-width="2" d="M43,1C19.8,1,1,19.8,1,43s18.8,42,42,42s42-18.8,42-42S66.2,1,43,1"/>
+					</svg>
+					<div class="second">0s</div>
+				</div>
+				<div class="mic">
+					<img class="icon" src="img/mic.svg"/>
+					<ul class="indicator">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<p>Blow into your microphone.</p>
+				</div>
+				<h2 class="subtitle">PLAY</h2>
+			</div>
+			<div id="finish" class="page">
+				<video class="bg" src="mov/air.mp4" poster="img/air.png" autoplay playsinline muted loop></video>
+				<img class="bg" src="img/air.png">
+				<div class="end">
+					<p>ご体験ありがとうございます<br>
+						5秒後に自動的にトップページに移動します</p>
+					<button class="btn-short top">← Top page</button>
+				</div>
+			</div>
+			<div id="top" class="page">
+				<video class="bg" src="mov/air.mp4" poster="img/air.png" autoplay playsinline muted loop></video>
+				<img class="bg" src="img/air.png">
+				<div class="main">
+					<h3>Play<span class="closing">: Now closed</span></h3>
+					<p>PLAYと表示されているデバイスのボタンを選び、画面が切り替わったらマイクに向かって息を吹きかけてください。</p>
+					<p class="small">* BUSYやCLOSEDとなっているデバイスは他の方が体験中か、休止中です。全てのデバイスが埋まっている場合は少しお待ちください。</p>
+					<p class="small">* 本作品はiOS Chromeには対応していません。他のブラウザを通してご体験ください。</p>
+					<ul class="status"></ul>
+					<hr>
+					<h3>Blow bubbles to another sky</h3>
+					<p>この作品は、インターネットを介して息を届けるオンライン参加型のインスタレーションです。自身のPCあるいはスマートフォンからウェブサイトにアクセスし、マイクに向かって息を吹きかけてください。それに同期して遠隔の土地にシャボン玉が飛びます。シャボン玉が空へと舞う様子は画面を通してリアルタイムに一人称視点で眺めることができます。移動や距離に制約の生まれた今という時代において、この作品体験は、画面の向こうに広がる世界に身体性を伴いつつ接続し、空気や風という見えない存在を改めて認識する機会を与えてくれます。</p>
+					<hr>
+					<h3>
+						How to Participate
+						<span class="title-border"> | </span>
+						<br class="break-br">
+						<span class="jp-title">体験の仕方</span>
+					</h3>
+					<p>Step 1 準備:<br>
+						本作品では、息を入力として用います。このためにPCやスマートフォンのマイクからの音声入力を利用します（詳細は<button class="policy">Privacy Policy</button>をご覧ください）。<br>
+						適切に入力を行うのに、事前にマイクの位置を把握しておくことをお勧めします。マイクをテストするには以下のボタンを押してください。</p>
+						<button class="btn-short howto">Mic Test</button><br>
+						<p>Step 2 参加:<br>
+						今回は会期中に最大2台のマシンが会場に配置されています。Playメニューにあるデバイスのボタンを押して体験に参加し、マイクに息を吹きかけてみてください。一度接続されると30秒間作品を体験することができます。</p>
+					<hr>
+					<h3>
+						Schedule
+						<span class="title-border"> | </span>
+						<br class="break-br">
+						<span class="jp-title">スケジュール</span>
+					</h3>
+					<p><a class="text-link" href="https://www.tokyo-midtown.com/jp/ars_midtown/future_picnic/" target="_blank">未来の学校 -OPEN STUDIO- "みらいのピクニック展" わたしたちの新しいコモンズ</a>の会期中、以下のスケジュールで体験できます。</p>
+					<hr class="short">
+					<strong>2021年10月15日（金）〜11月3日（水）11:00〜21:00</strong>
+					<p class="small">* 天気や風の状況によって、中止や予定の変更をする場合があります。</p>
+					<hr>
+					<h3>Credit</h3>
+					<p class="small">Artists: Yasuaki Kakehi, Daisuke Akatsuka, Juri Fujii, Yoshimori Yoshikawa, Wataru Date, Joung Min Han<br>
+						&copy2020 Yasuaki KAKEHI Laboratory, The University of Tokyo. | <button class="policy">Privacy Policy</button></p>
+				</div>
+				<a href="en/" id="lang">→ English</a>
+			</div>
+			<div id="instruction" class="page">
+				<div class="main">
+					<p>マイクが動いているかを確認し、息を吹き込む練習をしましょう。</p>
+					<img src="img/test-image.svg">
+					<ol>
+						<li>まず、ブラウザでこのウェブサイトでのマイクの利用を許可してください。<br>
+							<button class="btn-short test">Test</button>
+						</li>
+						<li>利用するデバイス（スマートフォン、PC、イアフォンなど）のマイクの位置を確認してください。もし分からない場合は下記のステップに進みながら探してください。</li>
+						<li>マイクに息を吹き込んでみましょう。</li>
+						<li>息を吹き込むのに応じて下のインジケーターが反応したら、入力は出来ていますので体験にお進みください。</li>
+					</ol>
+					<hr class="short">
+					<ul class="asterisk">
+						<li>マスクを装着している場合には、マイクに口を近づけたり、少し声を出すと入力を検出しやすくなります。</li>
+						<li>周囲が騒がしい環境では認識しにくい場合があります。その場合は、少し静かな環境を選んで体験してください。</li>
+					</ul>
+					<div class="mic-bg"></div>
+					<div class="mic">
+						<img class="icon" src="img/mic.svg"/>
+						<ul class="indicator">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<p>Blow into your microphone.</p>
+					</div>
+					<a href="#" class="close"></a>
+				</div>
+				<h2 class="subtitle">MIC TEST</h2>
+			</div>
+			<div id="policy" class="page">
+				<div class="main">
+					<h3 class="bold">Air on Air プライバシーポリシー</h3>
+					<p>Air on Airプロジェクト（以下「本プロジェクト」）は、本ウェブサイトおよび本ウェブサイトにて展示するインタラクティブ作品Air on Air（以下「本作品」）の体験における、ユーザー情報（個人情報の保護に関する法律（平成15年5月30日法律第57号）第2条に定める個人情報を含む）の取扱いについて、以下のとおりプライバシーポリシー（以下「本プライバシーポリシー」）を定めます。</p>
+					<h3>第1条　利用するユーザー情報</h3>
+					<p>本プライバシーポリシーにおいて、「ユーザー情報」とは、ユーザーの識別にかかる情報であって、本プライバシーポリシーに基づき本プロジェクトが利用するものを意味します。本プロジェクトが、本ウェブサイトの閲覧および本作品体験を通じて利用するユーザー情報は、以下のとおりです。</p>
+					<ul class="bold">
+						<li>音声（本作品体験時）</li>
+						<li>ユーザーのCookieその他の行動履歴</li>
+					</ul>
+					<h3>第2条　利用目的</h3>
+					<p>本ウェブサイトにかかわるユーザー情報は以下の目的で利用します。</p>
+					<ul class="bold">
+						<li>本作品の展示のため</li>
+						<li>ユーザーの利用状況を把握し、本ウェブサイトおよび本作品の改善等に役立てるため</li>
+						<li>本作品に関わるインタラクション研究のため</li>
+					</ul>
+					<p class="bold">その他上記各号に付随または関連する目的のため</p>
+					<h3>第3条　音声の利用</h3>
+					<p class="bold">本作品にて用いる音声の情報は、周波数や音圧などの特徴量のみが利用され、内容が識別できる状態で記録・保存されることはありません。</p>
+					<h3>第4条　Cookieの利用</h3>
+					<p>本プロジェクトは、利用状況の把握およびサービス向上の目的で、ユーザーのクッキー情報を用いて、閲覧したページ、ユーザーの利用環境などの情報を自動的に取得し、本プロジェクトのサーバーに記録しています。なお、クッキーを通じて取得する情報は、本プロジェクトがユーザー個人を識別できる情報は含まれておりません。</p>
+					<p>クッキーの使用を許可するかどうかはユーザーが設定できます。クッキーの使用を禁止した場合にも本ウェブサイトの閲覧には問題ありません。</p>
+					<p>本ウェブサイトではGoogle Analyticsを利用します。Google Analyticsは、Cookieを利用してユーザーの情報を取得します。Cookieを削除するオプトアウトについては、Google Analyticsの利用規約（https://policies.google.com/）をご確認ください。</p>
+					<h3>第5条　お問い合わせ</h3>
+					<p>ユーザー情報の取扱いに関するお問い合わせは、以下の窓口までお願いいたします。<br>
+						air -at- xlab.iii.u-tokyo.ac.jp </p>
+					<h3>第6条　本プライバシーポリシーの変更等</h3>
+					<p>本プロジェクトは、必要に応じて、本プライバシーポリシーの全部または一部を変更します。変更の際には、その内容を本ウェブサイト上にて表示します。</p>
+					<h3 class="bold">免責事項</h3>
+					<p>万一、ユーザーが本ウェブサイト閲覧および本作品体験の過程または結果その他の利用において、ユーザーまたは第三者に損害が発生した場合でも、本プロジェクトは当該ユーザーまたは第三者に対し、その損害を一切負わないものとします。</p>
+					<a href="#" class="close"></a>
+				</div>
+				<h2 class="subtitle">PRIVACY POLICY</h2>
+			</div>
+			<h1 id="logo">Air  on  Air</h1>
+		</div>
+		<div id="analytics">
+			<p>Google AnalyticsのトラッキングのためCookieを使用しています。<br>
+				Cookie使用に同意いただけない方は、拒否ボタンを押してください。</p>
+			<button class="yes btn-short">許可</button>
+			<button class="no btn-short">拒否</button>
+		</div>
+	</body>
+</html>
