@@ -162,8 +162,9 @@
 			H = Math.max(window.innerHeight, MH);
 		}
 		
+		$("#play .video").width(W);
 		$("#play .video").height(H);
-		let fw = $("#play .video").width(), fh = $("#play .video").height(), movW = 3, movH = 4, movSC = Math.min(fh/movH, fw/movW);
+		let fw = $("#play .video").width(), fh = $("#play .video").height(), movW = 3, movH = 4, movSC = Math.max(fh/movH, fw/movW);
 		$("#play #device").css({
 			width: (movSC * movW) + "px",
 			height: (movSC * movH) + "px",
