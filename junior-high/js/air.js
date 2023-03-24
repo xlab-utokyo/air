@@ -76,7 +76,6 @@
 			if ($("#top").css("opacity") == 1 && $("#top").css("display") == "block") {
 				switch(e.keyCode) {
 					case 90:
-						$("#top .main").find(".howto").click();
 						$("#top .status li").eq(0).find("button").click();
 					break;
 					case 88:
