@@ -363,7 +363,7 @@
 			isAlreadyPlayed = true;
 		}
 		if (data.currentUser != null && peer.id != data.currentUser) {
-			alert("Sorry, this room is busy.");
+//			alert("Sorry, this room is busy.");
 			room.close();
 			$("#top").fadeIn(TIME, () => {
 				location.reload();
